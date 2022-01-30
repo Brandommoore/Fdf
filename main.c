@@ -12,8 +12,11 @@
 
 #include "fdf.h"
 
-int	main(int argc, int **argv)
+int	main(int argc, char **argv)
 {
+
+	char *str = "Hola buenas tardes";
+	printf("str_len --> %ld", ft_strlen(str));
 
 	(void)argc;
 	(void)argv;

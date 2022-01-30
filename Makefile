@@ -30,12 +30,15 @@ CFNAME = -o $(NAME)
 all: $(NAME)
 
 $(NAME): $(OBJ) $(SEARCH)
-	$(CC) $(CFLAGS) $(OBJ) $(CFNAME)
+	@make -s -C libs/Libft
+	$(CC) $(CFLAGS) $(OBJ) -L libs/Libft $(CFNAME)
 
 clean:
+	@make clean -C libs/Libft
 	$(RM) $(OBJ) $(BONUS_OBJ)
 
 fclean: clean
+	@rm -f libs/Libft/libft.a
 	$(RM) $(NAME) $(OBJ)
 
 re: fclean all
