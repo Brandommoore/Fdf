@@ -6,7 +6,7 @@
 #    By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/14 17:00:13 by mcordoba          #+#    #+#              #
-#    Updated: 2021/09/29 13:00:46 by mcordoba         ###   ########.fr        #
+#    Updated: 2022/01/31 19:57:01 by mcordoba         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,6 @@ SRC = ft_isalpha.c \
 	ft_strlcat.c \
 	ft_toupper.c \
 	ft_tolower.c \
-	ft_strchr.c \
 	ft_strrchr.c \
 	ft_memchr.c \
 	ft_memcmp.c \
@@ -32,9 +31,6 @@ SRC = ft_isalpha.c \
 	ft_strncmp.c \
 	ft_strnstr.c \
 	ft_calloc.c \
-	ft_strdup.c \
-	ft_substr.c \
-	ft_strjoin.c \
 	ft_strtrim.c \
 	ft_split.c \
 	ft_strmapi.c \
@@ -43,7 +39,9 @@ SRC = ft_isalpha.c \
 	ft_putchar_fd.c \
 	ft_putstr_fd.c \
 	ft_putendl_fd.c \
-	ft_putnbr_fd.c
+	ft_putnbr_fd.c \
+	get_next_line.c \
+	get_next_line_utils.c
 
 BONUS_SRC = ft_lstnew_bonus.c \
 	ft_lstadd_front_bonus.c \
