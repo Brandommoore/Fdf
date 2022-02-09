@@ -6,11 +6,16 @@
 #    By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/26 20:29:36 by marvin            #+#    #+#              #
-#    Updated: 2022/01/31 21:41:01 by mcordoba         ###   ########.fr        #
+#    Updated: 2022/02/09 21:26:57 by mcordoba         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRC = 	main.c \
+		utils/freedom.c \
+		utils/events/close_clear.c \
+		utils/print_in_window/mlx_put_pixel.c \
+		utils/print_in_window/print_lines.c \
+		utils/read_map/map_size.c
 		
 
 NAME = fdf
