@@ -1,26 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   freedom.c                                          :+:      :+:    :+:   */
+/*   fill_map_struct.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/09 21:26:13 by mcordoba          #+#    #+#             */
-/*   Updated: 2022/02/10 17:11:30 by mcordoba         ###   ########.fr       */
+/*   Created: 2022/02/10 18:03:06 by mcordoba          #+#    #+#             */
+/*   Updated: 2022/02/10 21:20:05 by mcordoba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../fdf.h"
+#include "../../fdf.h"
 
-void	freedom(char **matrix)
+void	fill_map_struct(t_data fdf)
 {
-	int	c;
-
-	c = 0;
-	while (matrix && matrix[c] != '\0')
-	{
-		free(matrix[c]);
-		c++;
-	}
-	free(matrix);
+	
 }

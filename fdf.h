@@ -6,7 +6,7 @@
 /*   By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 21:54:34 by marvin            #+#    #+#             */
-/*   Updated: 2022/02/09 21:35:32 by mcordoba         ###   ########.fr       */
+/*   Updated: 2022/02/10 21:19:18 by mcordoba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,13 @@
 # include "libs/Libft/libft.h"
 # include "libs/minilibx_macos/mlx.h"
 # include "libs/key_macos.h"
+
+typedef struct s_point {
+	int				value;
+	int				pos_x;
+	int				pos_y;
+	int				color;
+}				t_point;
 
 typedef struct s_map {
 	int				width;
@@ -44,6 +51,7 @@ typedef struct s_img
 typedef struct s_data {
 	void			*mlx;
 	void			*win;
+	int				fd_map;
 	t_img			img;
 	t_cord			cord;
 	t_map			map;
@@ -66,5 +74,6 @@ void	clear_window(t_data *data);
 
 /*Read_map*/
 int		map_width(int fd_map);
+int		map_height(int fd_map);
 
 #endif

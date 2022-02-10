@@ -6,7 +6,7 @@
 /*   By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 21:54:29 by marvin            #+#    #+#             */
-/*   Updated: 2022/02/09 21:40:08 by mcordoba         ###   ########.fr       */
+/*   Updated: 2022/02/10 17:40:49 by mcordoba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,6 @@ int	main(int argc, char **argv)
 {
 	t_data	fdf;
 	int		fd_map;
-	char	*line;
 
 	fd_map = open("test_maps/elem2.fdf", O_RDONLY);
 	if (fd_map == -1)
@@ -69,10 +68,11 @@ int	main(int argc, char **argv)
 		return (0);
 	}
 	
-	line = get_next_line(fd_map);
-	printf("first line map --> \n%s\n", line);
+	//line = get_next_line(fd_map);
+	//printf("first line map --> \n%s\n", line);
 
 	map_width(fd_map);
+	map_height(fd_map);
 
 
 
