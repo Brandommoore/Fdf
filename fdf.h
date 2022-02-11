@@ -6,7 +6,7 @@
 /*   By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 21:54:34 by marvin            #+#    #+#             */
-/*   Updated: 2022/02/10 21:19:18 by mcordoba         ###   ########.fr       */
+/*   Updated: 2022/02/11 21:12:56 by mcordoba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ typedef struct s_data {
 	t_img			img;
 	t_cord			cord;
 	t_map			map;
+	t_point			**points;
 }				t_data;
 
 /*MAIN*/
@@ -75,5 +76,6 @@ void	clear_window(t_data *data);
 /*Read_map*/
 int		map_width(int fd_map);
 int		map_height(int fd_map);
+void	fill_map_struct(t_data fdf);
 
 #endif
