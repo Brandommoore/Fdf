@@ -6,7 +6,7 @@
 /*   By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 21:54:29 by marvin            #+#    #+#             */
-/*   Updated: 2022/02/11 21:14:44 by mcordoba         ###   ########.fr       */
+/*   Updated: 2022/02/14 20:53:05 by mcordoba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,8 @@ int	main(int argc, char **argv)
 
 	//map_width(fd_map);
 	//map_height(fd_map);
+
+	map_height(fdf);
 
 	fill_map_struct(fdf);
 
