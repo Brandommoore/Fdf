@@ -6,7 +6,7 @@
 /*   By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 21:54:29 by marvin            #+#    #+#             */
-/*   Updated: 2022/02/14 20:53:05 by mcordoba         ###   ########.fr       */
+/*   Updated: 2022/02/16 21:18:26 by mcordoba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,27 +59,14 @@ int	event_key(int keycode, t_data *data)
 int	main(int argc, char **argv)
 {
 	t_data	fdf;
-	//int		fd_map;
-
-	fdf.fd_map = open("test_maps/elem2.fdf", O_RDONLY);
-	if (fdf.fd_map == -1)
-	{
-		printf("Error al abrir el mapa");
-		exit (0);
-	}
-	
-	//line = get_next_line(fd_map);
-	//printf("first line map --> \n%s\n", line);
-
-	//map_width(fd_map);
-	//map_height(fd_map);
-
-	map_height(fdf);
-
-	fill_map_struct(fdf);
+	fdf.init = 1;
+	open_map("test_maps/elem-col.fdf", &fdf);
+	fill_map_struct(&fdf);
+	close_map(&fdf);
 
 
-
+	printf("El punto 4-2 tiene por valor --> %d\n", fdf.points[4][2].value);
+	printf("El punto 4-2 tiene por color --> %d\n", fdf.points[4][2].color);
 
 
 	fdf.cord.win_h = 720;

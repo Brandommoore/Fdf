@@ -6,7 +6,7 @@
 /*   By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 21:02:47 by mcordoba          #+#    #+#             */
-/*   Updated: 2022/02/14 20:57:24 by mcordoba         ###   ########.fr       */
+/*   Updated: 2022/02/16 17:28:12 by mcordoba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,28 +28,64 @@
 // 	return (w);
 // }
 
-int	map_height(t_data fdf)
+int	map_width(t_data *fdf)
+{
+	char	**points;
+	char	*line;
+	int		w;
+
+	line = "0";
+	line = get_next_line_w(fdf->fd_map.fd_map_w);
+	points = ft_split(line, ' ');
+	w = 0;
+	while (points && points[w] != '\0')
+		w++;
+	freedom(points);
+	free(line);
+	printf("width_map --> %d\n", w);
+	return (w);
+}
+
+int	map_height(t_data *fdf)
 {
 	int h;
-	int c;
-	char map[1000];
-
+	char *line;
+	
+	//line = get_next_line(fd_map);
 	h = 0;
-	c = 0;
-	read(fdf.fd_map, map, 1000);
-	printf("%s/n", map);
-	while (map[h] != '\0')
+	line = "0";
+	while (line != NULL)
 	{
-		if (map[h] == '\n')
-			c++;
 		h++;
+		line = get_next_line_h(fdf->fd_map.fd_map_h);
+		//printf("%s\n", line);
 	}
-	// while (line != NULL)
-	// {
-	// 	h++;
-	// 	line = get_next_line(fd_map);
-	// 	printf("%s\n", line);
-	// }
-	printf("height_map --> %d/n", c);
-	return (c);
+	fdf->map.height = h;
+	printf("height_map --> %d\n", h);
+	return (h);
 }
+
+
+// int	map_height(t_data fdf)
+// {
+// 	int h;
+// 	int c;
+
+// 	h = 0;
+// 	c = 0;
+// 	printf("%s/n", map);
+// 	while (map[h] != '\0')
+// 	{
+// 		if (map[h] == '\n')
+// 			c++;
+// 		h++;
+// 	}
+// 	// while (line != NULL)
+// 	// {
+// 	// 	h++;
+// 	// 	line = get_next_line(fd_map);
+// 	// 	printf("%s\n", line);
+// 	// }
+// 	printf("height_map --> %d/n", c);
+// 	return (c);
+// }

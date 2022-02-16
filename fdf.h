@@ -6,7 +6,7 @@
 /*   By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 21:54:34 by marvin            #+#    #+#             */
-/*   Updated: 2022/02/14 20:34:14 by mcordoba         ###   ########.fr       */
+/*   Updated: 2022/02/16 19:45:27 by mcordoba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,12 @@
 # include "libs/Libft/libft.h"
 # include "libs/minilibx_macos/mlx.h"
 # include "libs/key_macos.h"
+
+typedef struct s_fdmap{
+	int				fd_map_w;
+	int				fd_map_h;
+	int				fd_map;
+}				t_fdmap;
 
 typedef struct s_point {
 	int				value;
@@ -52,11 +58,12 @@ typedef struct s_img
 typedef struct s_data {
 	void			*mlx;
 	void			*win;
-	int				fd_map;
+	t_fdmap			fd_map;
 	t_img			img;
 	t_cord			cord;
 	t_map			map;
 	t_point			**points;
+	int				init;
 }				t_data;
 
 /*MAIN*/
@@ -75,8 +82,11 @@ void	ft_close(t_data *data);
 void	clear_window(t_data *data);
 
 /*Read_map*/
-int		map_width(t_data fdf);
-int		map_height(t_data fdf);
-void	fill_map_struct(t_data fdf);
+int		map_width(t_data *fdf);
+int		map_height(t_data *fdf);
+void	fill_map_struct(t_data *fdf);
+void	open_map(char *route, t_data *fdf);
+void	close_map(t_data *fdf);
+void	insert_data(t_data *fdf, char **l_split, int i, int j);
 
 #endif
