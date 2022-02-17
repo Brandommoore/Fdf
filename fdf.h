@@ -6,7 +6,7 @@
 /*   By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 21:54:34 by marvin            #+#    #+#             */
-/*   Updated: 2022/02/16 19:45:27 by mcordoba         ###   ########.fr       */
+/*   Updated: 2022/02/17 19:28:09 by mcordoba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,5 +88,6 @@ void	fill_map_struct(t_data *fdf);
 void	open_map(char *route, t_data *fdf);
 void	close_map(t_data *fdf);
 void	insert_data(t_data *fdf, char **l_split, int i, int j);
+int		str_to_color(char *color);
 
 #endif

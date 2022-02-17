@@ -6,7 +6,7 @@
 /*   By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 21:54:29 by marvin            #+#    #+#             */
-/*   Updated: 2022/02/16 21:18:26 by mcordoba         ###   ########.fr       */
+/*   Updated: 2022/02/17 19:28:38 by mcordoba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,9 +65,9 @@ int	main(int argc, char **argv)
 	close_map(&fdf);
 
 
-	printf("El punto 4-2 tiene por valor --> %d\n", fdf.points[4][2].value);
-	printf("El punto 4-2 tiene por color --> %d\n", fdf.points[4][2].color);
-
+	printf("El punto 4-2 tiene por valor --> %d\n", fdf.points[2][2].value);
+	printf("El punto 2-2 tiene por color --> %d\n", fdf.points[2][2].color);
+	str_to_color("0xFF0000");
 
 	fdf.cord.win_h = 720;
 	fdf.cord.win_w = 1080;
@@ -81,7 +81,7 @@ int	main(int argc, char **argv)
 	fdf.cord.px = 50;
 	fdf.cord.py = 50;
 	line_x(fdf, 50, 0x00FF0FF0);
-	line_y(fdf, 50, 0x00FF0FF0);
+	line_y(fdf, 50, 16715760);
 	// int c = 0;
 	// int px = 50;
 	// while (c < 10)
