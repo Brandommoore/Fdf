@@ -6,7 +6,7 @@
 /*   By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 21:54:34 by marvin            #+#    #+#             */
-/*   Updated: 2022/02/17 19:28:09 by mcordoba         ###   ########.fr       */
+/*   Updated: 2022/02/18 19:46:59 by mcordoba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <limits.h>
+# include <math.h>
 # include "libs/Libft/libft.h"
 # include "libs/minilibx_macos/mlx.h"
 # include "libs/key_macos.h"
@@ -89,5 +90,7 @@ void	open_map(char *route, t_data *fdf);
 void	close_map(t_data *fdf);
 void	insert_data(t_data *fdf, char **l_split, int i, int j);
 int		str_to_color(char *color);
+char	*color_format(char *color);
+int	letter_value(char letter);
 
 #endif

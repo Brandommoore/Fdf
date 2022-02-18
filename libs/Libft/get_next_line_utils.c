@@ -6,7 +6,7 @@
 /*   By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 16:58:02 by mcordoba          #+#    #+#             */
-/*   Updated: 2022/01/31 19:41:10 by mcordoba         ###   ########.fr       */
+/*   Updated: 2022/02/18 19:05:55 by mcordoba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,18 +82,6 @@ char	*ft_strdup(const char *s1)
 	}
 	str[c] = '\0';
 	return (str);
-}
-
-size_t	ft_strlen(const char *s)
-{
-	size_t	c;
-
-	c = 0;
-	while (s[c] != '\0')
-	{
-		c++;
-	}
-	return (c);
 }
 
 int	size_ln(const char *str)

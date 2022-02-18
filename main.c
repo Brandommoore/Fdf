@@ -6,7 +6,7 @@
 /*   By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 21:54:29 by marvin            #+#    #+#             */
-/*   Updated: 2022/02/17 19:28:38 by mcordoba         ###   ########.fr       */
+/*   Updated: 2022/02/18 21:20:30 by mcordoba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ int	event_key(int keycode, t_data *data)
 		printf("↑\n");
 		data->cord.py -= 5;
 		clear_window(data);
-		line_x(*data, 50, 0x00FF0FF0);
-		line_y(*data, 50, 0x00FF0FF0);
+		line_x(*data, 50, 0xFF0FF0);
+		line_y(*data, 50, 0xFF0FF0);
 		mlx_put_image_to_window(data->mlx, data->win, data->img.img, 0, 0);
 	}
 	else if (keycode == K_AR_D)
@@ -31,8 +31,8 @@ int	event_key(int keycode, t_data *data)
 		printf("↓\n");
 		data->cord.py += 5;
 		clear_window(data);
-		line_x(*data, 50, 0x00FF0FF0);
-		line_y(*data, 50, 0x00FF0FF0);
+		line_x(*data, 50, 0xFF0FF0);
+		line_y(*data, 50, 0xFF0FF0);
 		mlx_put_image_to_window(data->mlx, data->win, data->img.img, 0, 0);
 	}
 	else if (keycode == K_AR_L)
@@ -40,8 +40,8 @@ int	event_key(int keycode, t_data *data)
 		printf("←\n");
 		data->cord.px -= 5;
 		clear_window(data);
-		line_x(*data, 50, 0x00FF0FF0);
-		line_y(*data, 50, 0x00FF0FF0);
+		line_x(*data, 50, 0xFF0FF0);
+		line_y(*data, 50, 0xFF0FF0);
 		mlx_put_image_to_window(data->mlx, data->win, data->img.img, 0, 0);
 	}
 	else if (keycode == K_AR_R)
@@ -49,8 +49,8 @@ int	event_key(int keycode, t_data *data)
 		printf("➞\n");
 		data->cord.px += 5;
 		clear_window(data);
-		line_x(*data, 50, 0x00FF0FF0);
-		line_y(*data, 50, 0x00FF0FF0);
+		line_x(*data, 50, 0xFF0FF0);
+		line_y(*data, 50, 15793920);
 		mlx_put_image_to_window(data->mlx, data->win, data->img.img, 0, 0);
 	}
 	return (0);
@@ -68,6 +68,7 @@ int	main(int argc, char **argv)
 	printf("El punto 4-2 tiene por valor --> %d\n", fdf.points[2][2].value);
 	printf("El punto 2-2 tiene por color --> %d\n", fdf.points[2][2].color);
 	str_to_color("0xFF0000");
+	printf("str_to_color --> %d\n", str_to_color("0xFF0FF0"));
 
 	fdf.cord.win_h = 720;
 	fdf.cord.win_w = 1080;
