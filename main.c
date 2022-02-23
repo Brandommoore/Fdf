@@ -6,7 +6,7 @@
 /*   By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 21:54:29 by marvin            #+#    #+#             */
-/*   Updated: 2022/02/18 21:20:30 by mcordoba         ###   ########.fr       */
+/*   Updated: 2022/02/23 21:26:14 by mcordoba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,8 @@ int	event_key(int keycode, t_data *data)
 		printf("➞\n");
 		data->cord.px += 5;
 		clear_window(data);
-		line_x(*data, 50, 0xFF0FF0);
-		line_y(*data, 50, 15793920);
+		line_x(*data, 50, 0xFF0000);
+		line_y(*data, 50, 15728640);
 		mlx_put_image_to_window(data->mlx, data->win, data->img.img, 0, 0);
 	}
 	return (0);
@@ -63,12 +63,13 @@ int	main(int argc, char **argv)
 	open_map("test_maps/elem-col.fdf", &fdf);
 	fill_map_struct(&fdf);
 	close_map(&fdf);
-
+	//fdf.map.width = 50;
+	//fdf.map.height = 50;
 
 	printf("El punto 4-2 tiene por valor --> %d\n", fdf.points[2][2].value);
 	printf("El punto 2-2 tiene por color --> %d\n", fdf.points[2][2].color);
-	str_to_color("0xFF0000");
-	printf("str_to_color --> %d\n", str_to_color("0xFF0FF0"));
+	//str_to_color("0xFF0000");
+	printf("str_to_color --> %d\n", str_to_color("0xFF0000"));
 
 	fdf.cord.win_h = 720;
 	fdf.cord.win_w = 1080;
@@ -79,10 +80,40 @@ int	main(int argc, char **argv)
 								&fdf.img.endian);
 	///offset = (fdf.cord.win_h * fdf.img.line_length + fdf.cord.win_w * (fdf.img.bits_per_pixel / 8));
 
-	fdf.cord.px = 50;
-	fdf.cord.py = 50;
-	line_x(fdf, 50, 0x00FF0FF0);
-	line_y(fdf, 50, 16715760);
+	//print_map(fdf);
+
+	// int x;
+	// int y;
+
+	// x = 0;
+	// while (x < 9)
+	// {
+	// 	y = 0;
+	// 	while (y < 9)
+	// 	{
+	// 		printf("value --> %d\n", fdf.points[y][x].value);
+	// 		printf("pos_x --> %d\n", fdf.points[y][x].value);
+	// 		printf("pos_y --> %d\n", fdf.points[y][x].value);
+	// 		printf("color --> %d\n", fdf.points[y][x].value);
+	// 		printf("--------------\n");
+	// 		y++;
+	// 	}
+	// 	x++;
+	// }
+
+
+	printf("value --> %d\n", fdf.points[2][2].value);
+	printf("pos_x --> %d\n", fdf.points[2][2].value);
+	printf("pos_y --> %d\n", fdf.points[2][2].value);
+	printf("color --> %d\n", fdf.points[2][2].value);
+
+	//print_map(fdf);
+	
+		// fdf.cord.px = 50;
+		// fdf.cord.py = 50;
+		// line_x(fdf, 50, 16715760);
+		// line_y(fdf, 50, 16715760);
+		
 	// int c = 0;
 	// int px = 50;
 	// while (c < 10)

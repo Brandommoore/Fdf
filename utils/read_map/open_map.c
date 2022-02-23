@@ -6,7 +6,7 @@
 /*   By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 16:44:51 by mcordoba          #+#    #+#             */
-/*   Updated: 2022/02/16 17:38:41 by mcordoba         ###   ########.fr       */
+/*   Updated: 2022/02/23 21:10:37 by mcordoba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static void	err_message()
 {
-	printf("Error al abrir el mapa\n");
+	ft_putstr("Error al abrir el mapa\n");
 	exit (0);
 }
 

@@ -6,7 +6,7 @@
 /*   By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 18:03:06 by mcordoba          #+#    #+#             */
-/*   Updated: 2022/02/17 19:28:58 by mcordoba         ###   ########.fr       */
+/*   Updated: 2022/02/23 21:27:24 by mcordoba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ void	fill_map_struct(t_data *fdf)
 	char **l_split;
 
 	line = "0";
-	i = 0;
 	fdf->points = malloc((map_height(fdf) + 1) * sizeof(t_point *));
 	if (!fdf->points)
 		return ;
+	i = 0;
 	while (line != NULL)
 	{
 		j = 0;
@@ -34,7 +34,7 @@ void	fill_map_struct(t_data *fdf)
 			return ;
 		while (l_split != NULL && l_split[j] != '\0')
 		{
-			insert_data(fdf, l_split, i, j);
+			insert_data(*fdf, l_split, i, j);
 			j++;
 		}
 		i++;
@@ -43,16 +43,16 @@ void	fill_map_struct(t_data *fdf)
 	free(line);
 }
 
-void	insert_data(t_data *fdf, char **l_split, int i, int j)
+void	insert_data(t_data fdf, char **l_split, int i, int j)
 {
 	char **p_split;
 
 	p_split = ft_split(l_split[j], ',');
-	fdf->points[i][j].value = ft_atoi(p_split[0]);
-	fdf->points[i][j].pos_x = i;
-	fdf->points[i][j].pos_y = j;
+	fdf.points[i][j].value = ft_atoi(p_split[0]);
+	fdf.points[i][j].pos_x = i;
+	fdf.points[i][j].pos_y = j;
 	if (p_split[1] == NULL)
-		fdf->points[i][j].color = 0x00FF0000;
+		fdf.points[i][j].color = 0xFFFFFF;
 	else
-		fdf->points[i][j].color = (int)p_split[1];
+		fdf.points[i][j].color = str_to_color(p_split[1]);
 }

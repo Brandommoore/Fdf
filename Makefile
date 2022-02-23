@@ -6,15 +6,17 @@
 #    By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/26 20:29:36 by marvin            #+#    #+#              #
-#    Updated: 2022/02/17 19:27:59 by mcordoba         ###   ########.fr        #
+#    Updated: 2022/02/23 21:10:59 by mcordoba         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRC = 	main.c \
 		utils/freedom.c \
+		utils/ft_putstr.c \
 		utils/events/close_clear.c \
 		utils/print_in_window/mlx_put_pixel.c \
 		utils/print_in_window/print_lines.c \
+		utils/print_in_window/print_map.c \
 		utils/read_map/open_map.c \
 		utils/read_map/map_size.c \
 		utils/read_map/fill_map_struct.c \

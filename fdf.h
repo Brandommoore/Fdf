@@ -6,7 +6,7 @@
 /*   By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 21:54:34 by marvin            #+#    #+#             */
-/*   Updated: 2022/02/18 19:46:59 by mcordoba         ###   ########.fr       */
+/*   Updated: 2022/02/23 21:27:15 by mcordoba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,11 +72,13 @@ int		event_key(int keycode, t_data *data);
 
 /*UTILS*/
 void	freedom(char **matrix);
+void	ft_putstr(const char *str);
 
 /*--Print_in_window*/
 void	my_mlx_pixel_put(t_data *data, int x, int y, int color);
 int		line_y(t_data fdf, int width, int color);
 int		line_x(t_data fdf, int width, int color);
+void	print_map(t_data fdf);
 
 /*Events*/
 void	ft_close(t_data *data);
@@ -88,7 +90,7 @@ int		map_height(t_data *fdf);
 void	fill_map_struct(t_data *fdf);
 void	open_map(char *route, t_data *fdf);
 void	close_map(t_data *fdf);
-void	insert_data(t_data *fdf, char **l_split, int i, int j);
+void	insert_data(t_data fdf, char **l_split, int i, int j);
 int		str_to_color(char *color);
 char	*color_format(char *color);
 int	letter_value(char letter);

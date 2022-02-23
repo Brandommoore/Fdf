@@ -6,7 +6,7 @@
 /*   By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 21:02:47 by mcordoba          #+#    #+#             */
-/*   Updated: 2022/02/16 17:28:12 by mcordoba         ###   ########.fr       */
+/*   Updated: 2022/02/22 19:04:12 by mcordoba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ int	map_width(t_data *fdf)
 	freedom(points);
 	free(line);
 	printf("width_map --> %d\n", w);
+	fdf->map.width = w;
 	return (w);
 }
 

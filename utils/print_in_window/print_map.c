@@ -1,40 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_lines.c                                      :+:      :+:    :+:   */
+/*   print_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/09 20:37:37 by mcordoba          #+#    #+#             */
-/*   Updated: 2022/02/21 21:33:50 by mcordoba         ###   ########.fr       */
+/*   Created: 2022/02/22 18:38:16 by mcordoba          #+#    #+#             */
+/*   Updated: 2022/02/23 21:13:03 by mcordoba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../fdf.h"
 
-int	line_y(t_data fdf, int width, int color)
+void	print_map(t_data fdf)
 {
-	int	j;
+	int x;
+	int y;
+	int px;
+	int py;
 
-	j = 0;
-	while (j <= width)
+	px = 0;
+	py = 0;
+	//fdf.cord.px = 15;
+	//fdf.cord.py = 15;
+	y = 0;
+	while (y <= 9)
 	{
-		my_mlx_pixel_put(&fdf, fdf.cord.px, fdf.cord.py + j, color);
-		j++;
+		x = 0;
+		while (x <= 9)
+		{
+			py = line_y(fdf, py, fdf.points[x][y].color);
+			px = line_x(fdf, px, fdf.points[x][y].color);
+			x++;
+		}
+		y++;
 	}
-	return (j + fdf.cord.py);
 }
-
-int	line_x(t_data fdf, int width, int color)
-{
-	int	j;
-
-	j = 0;
-	while (j <= width)
-	{
-		my_mlx_pixel_put(&fdf, fdf.cord.px + j, fdf.cord.py, color);
-		j++;
-	}
-	return (j + fdf.cord.px);
-}
-
