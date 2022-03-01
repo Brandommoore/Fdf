@@ -6,7 +6,7 @@
 /*   By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 21:02:47 by mcordoba          #+#    #+#             */
-/*   Updated: 2022/02/22 19:04:12 by mcordoba         ###   ########.fr       */
+/*   Updated: 2022/02/24 20:51:30 by mcordoba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,24 @@
 // 	return (w);
 // }
 
+int	line_width(t_data *fdf)
+{
+	char	**points;
+	char	*line;
+	int		lw;
+
+	line = "0";
+	line = get_next_line_wl(fdf->fd_map.fd_line_w);
+	points = ft_split(line, ' ');
+	lw = 0;
+	while (points && points[lw] != '\0')
+		lw++;
+	freedom(points);
+	free(line);
+	fdf->map.width = lw;
+	return (lw);
+}
+
 int	map_width(t_data *fdf)
 {
 	char	**points;
@@ -42,8 +60,7 @@ int	map_width(t_data *fdf)
 		w++;
 	freedom(points);
 	free(line);
-	printf("width_map --> %d\n", w);
-	fdf->map.width = w;
+	//printf("width_map --> %d\n", w);
 	return (w);
 }
 
@@ -61,8 +78,9 @@ int	map_height(t_data *fdf)
 		line = get_next_line_h(fdf->fd_map.fd_map_h);
 		//printf("%s\n", line);
 	}
+	free(line);
 	fdf->map.height = h;
-	printf("height_map --> %d\n", h);
+	//printf("height_map --> %d\n", h);
 	return (h);
 }
 

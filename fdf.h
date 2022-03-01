@@ -6,7 +6,7 @@
 /*   By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 21:54:34 by marvin            #+#    #+#             */
-/*   Updated: 2022/02/23 21:27:15 by mcordoba         ###   ########.fr       */
+/*   Updated: 2022/03/01 18:26:01 by mcordoba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@
 typedef struct s_fdmap{
 	int				fd_map_w;
 	int				fd_map_h;
+	int				fd_line_w;
 	int				fd_map;
 }				t_fdmap;
 
@@ -72,13 +73,19 @@ int		event_key(int keycode, t_data *data);
 
 /*UTILS*/
 void	freedom(char **matrix);
+void	double_freedom(char **matrix, char *line);
 void	ft_putstr(const char *str);
 
+/*ERRMANAG*/
+void	errmanag(int argc);
+
 /*--Print_in_window*/
+void	bresen_alg(float x, float y, float x1, float y2, t_data *fdf);
 void	my_mlx_pixel_put(t_data *data, int x, int y, int color);
 int		line_y(t_data fdf, int width, int color);
 int		line_x(t_data fdf, int width, int color);
 void	print_map(t_data fdf);
+void	print_values_console(t_data *fdf);
 
 /*Events*/
 void	ft_close(t_data *data);
@@ -87,12 +94,14 @@ void	clear_window(t_data *data);
 /*Read_map*/
 int		map_width(t_data *fdf);
 int		map_height(t_data *fdf);
+int		line_width(t_data *fdf);
 void	fill_map_struct(t_data *fdf);
 void	open_map(char *route, t_data *fdf);
+int		f_extension(char *route, char *ext);
 void	close_map(t_data *fdf);
 void	insert_data(t_data fdf, char **l_split, int i, int j);
 int		str_to_color(char *color);
 char	*color_format(char *color);
-int	letter_value(char letter);
+int		letter_value(char letter);
 
 #endif

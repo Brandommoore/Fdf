@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_w.c                                  :+:      :+:    :+:   */
+/*   get_next_line_w copy.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 16:57:34 by mcordoba          #+#    #+#             */
-/*   Updated: 2022/02/24 20:39:34 by mcordoba         ###   ########.fr       */
+/*   Updated: 2022/02/24 20:39:25 by mcordoba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static char	*line_split(char **s_line)
 	return (dst);
 }
 
-char	*get_next_line_wl(int fd)
+char	*get_next_line_w(int fd)
 {
 	ssize_t		val_read;
 	static char	*s_line;

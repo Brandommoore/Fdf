@@ -6,7 +6,7 @@
 /*   By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 19:16:07 by mcordoba          #+#    #+#             */
-/*   Updated: 2022/02/22 19:11:21 by mcordoba         ###   ########.fr       */
+/*   Updated: 2022/02/24 19:27:13 by mcordoba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int	str_to_color(char *color)
 		letter_val = letter_value(color[color_len]);
 		nb_exp = pow(16, exp);
 		color_val += (letter_val * nb_exp);
-		printf("color_val --> %d\nletter_val --> %d\nnb_exp --> %d\n", color_val, letter_val, nb_exp);
+		//printf("color_val --> %d\nletter_val --> %d\nnb_exp --> %d\n", color_val, letter_val, nb_exp);
 		exp++;
 		color_len--;
 	}

@@ -1,32 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   freedom.c                                          :+:      :+:    :+:   */
+/*   bresen_alg.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/09 21:26:13 by mcordoba          #+#    #+#             */
-/*   Updated: 2022/02/25 18:09:12 by mcordoba         ###   ########.fr       */
+/*   Created: 2022/02/28 16:07:46 by mcordoba          #+#    #+#             */
+/*   Updated: 2022/02/28 16:51:10 by mcordoba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../fdf.h"
+#include "../../fdf.h"
 
-void	freedom(char **matrix)
+void bresen_alg(float x, float y, float x1, float y2, t_data *fdf)
 {
-	int	c;
+	// float step_x;
+	// float step_y;
 
-	c = 0;
-	while (matrix && matrix[c] != '\0')
-	{
-		free(matrix[c]);
-		c++;
-	}
-	free(matrix);
-}
-
-void	double_freedom(char **matrix, char *line)
-{
-	freedom(matrix);
-	free(line);
+	(void)x;
+	(void)y;
+	(void)x1;
+	(void)y2;
+	(void)fdf;
 }

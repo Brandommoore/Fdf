@@ -6,7 +6,7 @@
 #    By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/14 17:00:13 by mcordoba          #+#    #+#              #
-#    Updated: 2022/02/15 17:18:53 by mcordoba         ###   ########.fr        #
+#    Updated: 2022/02/24 20:39:50 by mcordoba         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,6 +42,7 @@ SRC = ft_isalpha.c \
 	ft_putnbr_fd.c \
 	get_next_line.c \
 	get_next_line_w.c \
+	get_next_line_wl.c \
 	get_next_line_h.c \
 	get_next_line_utils.c
 
