@@ -6,13 +6,13 @@
 /*   By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 16:44:51 by mcordoba          #+#    #+#             */
-/*   Updated: 2022/03/01 18:48:00 by mcordoba         ###   ########.fr       */
+/*   Updated: 2022/03/01 21:23:41 by mcordoba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../fdf.h"
 
-static void	err_message()
+static void	err_message(void)
 {
 	ft_putstr("Error al abrir el mapa\n");
 	exit (0);
@@ -20,8 +20,8 @@ static void	err_message()
 
 int	f_extension(char *route, char *ext)
 {
-	int route_len;
-	int ext_len;
+	int	route_len;
+	int	ext_len;
 
 	route_len = (int)ft_strlen(route) - 1;
 	ext_len = (int)ft_strlen(ext) - 1;
@@ -35,7 +35,7 @@ int	f_extension(char *route, char *ext)
 		ext_len--;
 		route_len--;
 	}
-	return(1);
+	return (1);
 }
 
 void	open_map(char *route, t_data *fdf)
@@ -44,10 +44,8 @@ void	open_map(char *route, t_data *fdf)
 	int	fd_map_h;
 	int	fd_line_w;
 	int	fd_map;
-	int	f_ext;
 
-	f_ext = f_extension(route, ".fdf");
-	if (f_ext == 0)
+	if (f_extension(route, ".fdf") == 0)
 		exit(0);
 	fd_map_w = open(route, O_RDONLY);
 	if (fd_map_w == -1)
