@@ -1,0 +1,6 @@
+# Ignora archivos del SO_Mac
+.DS_store
+# Ignora la carpeta de debug de VSC
+.vscode
+# Ignora los .o
+*.o
