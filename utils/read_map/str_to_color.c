@@ -12,7 +12,11 @@
 
 #include "../../fdf.h"
 
+<<<<<<< Updated upstream
 char	*color_format(char *color)
+=======
+/*int	str_to_color(char *color)
+>>>>>>> Stashed changes
 {
 	int color_str_len;
 	int j;
@@ -75,4 +79,4 @@ int	letter_value(char letter)
 		val++;
 	}
 	return (0);
-}
+}*/

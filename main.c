@@ -70,10 +70,13 @@ int	main(int argc, char **argv)
 	printf("El punto 4-2 tiene por valor --> %d\n", fdf.points[2][2].value);
 	printf("El punto 2-2 tiene por color --> %d\n", fdf.points[2][2].color);
 	//str_to_color("0xFF0000");
+<<<<<<< Updated upstream
 	printf("str_to_color --> %d\n", str_to_color("0xFF0000"));
 
 	//print_values_console(fdf);
 	
+=======
+>>>>>>> Stashed changes
 
 	
 	fdf.cord.win_h = 720;
