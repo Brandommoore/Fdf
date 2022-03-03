@@ -6,17 +6,13 @@
 /*   By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 19:16:07 by mcordoba          #+#    #+#             */
-/*   Updated: 2022/02/24 19:27:13 by mcordoba         ###   ########.fr       */
+/*   Updated: 2022/03/03 18:35:08 by mcordoba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../fdf.h"
 
-<<<<<<< Updated upstream
 char	*color_format(char *color)
-=======
-/*int	str_to_color(char *color)
->>>>>>> Stashed changes
 {
 	int color_str_len;
 	int j;
@@ -79,4 +75,4 @@ int	letter_value(char letter)
 		val++;
 	}
 	return (0);
-}*/
+}
