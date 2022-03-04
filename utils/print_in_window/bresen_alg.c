@@ -6,13 +6,13 @@
 /*   By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 16:07:46 by mcordoba          #+#    #+#             */
-/*   Updated: 2022/03/03 21:39:25 by mcordoba         ###   ########.fr       */
+/*   Updated: 2022/03/04 17:10:11 by mcordoba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../fdf.h"
 
-static float	max(float a, float b)
+static float	f_max(float a, float b)
 {
 	if (a > b)
 		return (a);
@@ -20,7 +20,7 @@ static float	max(float a, float b)
 		return (b);
 }
 
-static float	mod(a)
+static float	f_mod(a)
 {
 	if (a < 0)
 		return (a * -1);
@@ -34,13 +34,19 @@ void	bresen_alg(float x, float y, float x1, float y1, t_data *fdf)
 	float	step_y;
 	int		max;
 
-	//step_x = x1 - x;
-	//step_y = y1 - y;
+	step_x = x1 - x;
+	step_y = y1 - y;
 
-	//step_x /= max;
-	//step_x /= max;
+	max = f_max(f_mod(step_x), f_mod(step_y));
+	step_x /= max;
+	step_y /= max;
 
-	(void)fdf;
+	while ((int)(x - x1) || (int)(y - y1))
+	{
+		my_mlx_pixel_put(fdf, x, y, 0xffffff);
+		x += step_x;
+		y += step_y;
+	}
 }
 
 

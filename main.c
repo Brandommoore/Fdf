@@ -6,7 +6,7 @@
 /*   By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 21:54:29 by marvin            #+#    #+#             */
-/*   Updated: 2022/03/03 18:10:05 by mcordoba         ###   ########.fr       */
+/*   Updated: 2022/03/04 17:08:56 by mcordoba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,37 +20,25 @@ int	event_key(int keycode, t_data *data)
 	else if (keycode == K_AR_U)
 	{
 		printf("↑\n");
-		data->cord.py -= 5;
 		clear_window(data);
-		line_x(*data, 50, 0xFF0FF0);
-		line_y(*data, 50, 0xFF0FF0);
 		mlx_put_image_to_window(data->mlx, data->win, data->img.img, 0, 0);
 	}
 	else if (keycode == K_AR_D)
 	{
 		printf("↓\n");
-		data->cord.py += 5;
 		clear_window(data);
-		line_x(*data, 50, 0xFF0FF0);
-		line_y(*data, 50, 0xFF0FF0);
 		mlx_put_image_to_window(data->mlx, data->win, data->img.img, 0, 0);
 	}
 	else if (keycode == K_AR_L)
 	{
 		printf("←\n");
-		data->cord.px -= 5;
 		clear_window(data);
-		line_x(*data, 50, 0xFF0FF0);
-		line_y(*data, 50, 0xFF0FF0);
 		mlx_put_image_to_window(data->mlx, data->win, data->img.img, 0, 0);
 	}
 	else if (keycode == K_AR_R)
 	{
 		printf("➞\n");
-		data->cord.px += 5;
 		clear_window(data);
-		line_x(*data, 50, 0xFF0000);
-		line_y(*data, 50, 15728640);
 		mlx_put_image_to_window(data->mlx, data->win, data->img.img, 0, 0);
 	}
 	return (0);
@@ -89,6 +77,8 @@ int	main(int argc, char **argv)
 	printf("map_height --> %d\nmap_width --> %d\n", fdf.map.height, fdf.map.height);
 	//printf("line_widt ---------------> %d\n", line_w);
 
+
+	bresen_alg(10, 10, 600, 300, &fdf);
 
 	// int x;
 	// int y;
