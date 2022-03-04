@@ -6,13 +6,29 @@
 /*   By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 18:38:16 by mcordoba          #+#    #+#             */
-/*   Updated: 2022/02/24 20:57:44 by mcordoba         ###   ########.fr       */
+/*   Updated: 2022/03/04 17:51:25 by mcordoba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../fdf.h"
 
-void	print_map(t_data fdf)
+static void	bress_line_hor(int x, int y, t_data *fdf)
+{
+	fdf->bresshem.x = x;
+	fdf->bresshem.y = y;
+	fdf->bresshem.x1 = x + 1;
+	fdf->bresshem.y1 = y;
+}
+
+static void	bress_line_ver(int x, int y, t_data *fdf)
+{
+	fdf->bresshem.x = x;
+	fdf->bresshem.y = y;
+	fdf->bresshem.x1 = x;
+	fdf->bresshem.y1 = y + 1;
+}
+
+void	print_map(t_data *fdf)
 {
 	int x;
 	int y;
@@ -21,16 +37,16 @@ void	print_map(t_data fdf)
 
 	px = 0;
 	py = 0;
-	//fdf.cord.px = 15;
-	//fdf.cord.py = 15;
 	y = 0;
-	while (y <= 9)
+	while (y < fdf->map.width)
 	{
 		x = 0;
-		while (x <= 9)
+		while (x < fdf->map.height - 1)
 		{
-			py = line_y(fdf, py, fdf.points[x][y].color);
-			px = line_x(fdf, px, fdf.points[x][y].color);
+			bress_line_hor(x, y, fdf);
+			bresen_alg(fdf);
+			bress_line_ver(x, y, fdf);
+			bresen_alg(fdf);
 			x++;
 		}
 		y++;
