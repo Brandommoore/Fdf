@@ -12,7 +12,23 @@
 
 #include "../../fdf.h"
 
-void bresen_alg(float x, float y, float x1, float y1, t_data *fdf)
+static float	max(float a, float b)
+{
+	if (a > b)
+		return (a);
+	else
+		return (b);
+}
+
+static float	mod(a)
+{
+	if (a < 0)
+		return (a * -1);
+	else
+		return (a);
+}
+
+void	bresen_alg(float x, float y, float x1, float y1, t_data *fdf)
 {
 	float	step_x;
 	float	step_y;
