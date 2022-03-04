@@ -6,7 +6,7 @@
 /*   By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 19:16:07 by mcordoba          #+#    #+#             */
-/*   Updated: 2022/03/03 18:35:08 by mcordoba         ###   ########.fr       */
+/*   Updated: 2022/03/04 19:16:36 by mcordoba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,20 +19,17 @@ char	*color_format(char *color)
 	int i;
 	char *color_hex;
 
-	//i = 2;
 	j = 2;
 	i = 0;
 	color_str_len = ft_strlen(color);
 	color_hex = malloc(sizeof (char) * 7);
 	while (j < color_str_len)
 	{
-		//printf("color_strlen --> %d\nj --> %d\n", color_str_len, j);
 		color_hex[i] = color[j];
 		i++;
 		j++;
 	}
 	color_hex[6] = '\0';
-	//printf("Color format is --> %s\n", color_hex);
 	return (color_hex);
 }
 
@@ -48,15 +45,13 @@ int	str_to_color(char *color)
 	color_val = 0;
 	color_len = ft_strlen(color);
 	exp = 0;
-	//printf("letter -> %c\n", color[color_len - 1]);
 	while (color_len > 0)
 	{
+		color_len--;
 		letter_val = letter_value(color[color_len]);
 		nb_exp = pow(16, exp);
 		color_val += (letter_val * nb_exp);
-		//printf("color_val --> %d\nletter_val --> %d\nnb_exp --> %d\n", color_val, letter_val, nb_exp);
 		exp++;
-		color_len--;
 	}
 	return (color_val);
 }
@@ -74,5 +69,6 @@ int	letter_value(char letter)
 			return (val);
 		val++;
 	}
+	free(base);
 	return (0);
 }

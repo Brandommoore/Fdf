@@ -6,7 +6,7 @@
 /*   By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 21:54:34 by marvin            #+#    #+#             */
-/*   Updated: 2022/03/04 17:56:05 by mcordoba         ###   ########.fr       */
+/*   Updated: 2022/03/04 19:13:03 by mcordoba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,6 +105,7 @@ void	print_values_console(t_data *fdf);
 
 /*Events*/
 void	ft_close(t_data *data);
+int		ft_close_wrap(void *data);
 void	clear_window(t_data *data);
 
 /*Read_map*/

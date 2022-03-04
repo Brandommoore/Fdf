@@ -6,13 +6,13 @@
 /*   By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 18:38:16 by mcordoba          #+#    #+#             */
-/*   Updated: 2022/03/04 17:58:39 by mcordoba         ###   ########.fr       */
+/*   Updated: 2022/03/04 19:20:02 by mcordoba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../fdf.h"
 
-static void	bress_line_hor(int x, int y, t_data *fdf)
+static void	bress_line_hor(int x, int y, int color, t_data *fdf)
 {
 	int zoom;
 
@@ -21,9 +21,10 @@ static void	bress_line_hor(int x, int y, t_data *fdf)
 	fdf->bresshem.y = y;
 	fdf->bresshem.x1 = x + 1;
 	fdf->bresshem.y1 = y;
+	fdf->bresshem.color = color;
 }
 
-static void	bress_line_ver(int x, int y, t_data *fdf)
+static void	bress_line_ver(int x, int y, int color, t_data *fdf)
 {
 	int zoom;
 
@@ -32,26 +33,25 @@ static void	bress_line_ver(int x, int y, t_data *fdf)
 	fdf->bresshem.y = y;
 	fdf->bresshem.x1 = x;
 	fdf->bresshem.y1 = y + 1;
+	fdf->bresshem.color = color;
 }
 
 void	print_map(t_data *fdf)
 {
-	int x;
-	int y;
-	int px;
-	int py;
+	int	x;
+	int	y;
+	int	color;
 
-	px = 0;
-	py = 0;
 	y = 0;
-	while (y < fdf->map.width)
+	while (y < fdf->map.height - 1)
 	{
 		x = 0;
-		while (x < fdf->map.height - 1)
+		while (x < fdf->map.width)
 		{
-			bress_line_hor(x, y, fdf);
+			color = fdf->points[y][x].color;
+			bress_line_hor(x, y, color, fdf);
 			bresen_alg(fdf);
-			bress_line_ver(x, y, fdf);
+			bress_line_ver(x, y, color, fdf);
 			bresen_alg(fdf);
 			x++;
 		}
@@ -64,7 +64,7 @@ void	print_values_console(t_data *fdf)
 	int x;
 	int y;
 
-	printf("map_height --> %d\nmap_width --> %d\n", fdf->map.height, fdf->map.height);
+	printf("map_height --> %d\nmap_width --> %d\n", fdf->map.height, fdf->map.width);
 
 	x = 0;
 	while (x < fdf->map.height - 1)

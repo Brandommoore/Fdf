@@ -6,7 +6,7 @@
 /*   By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 21:54:29 by marvin            #+#    #+#             */
-/*   Updated: 2022/03/04 17:56:31 by mcordoba         ###   ########.fr       */
+/*   Updated: 2022/03/04 19:12:39 by mcordoba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,10 +74,10 @@ int	main(int argc, char **argv)
 	///offset = (fdf.cord.win_h * fdf.img.line_length + fdf.cord.win_w * (fdf.img.bits_per_pixel / 8));
 
 	//int line_w = line_width(&fdf);
-	printf("map_height --> %d\nmap_width --> %d\n", fdf.map.height, fdf.map.height);
+	printf("map_height --> %d\nmap_width --> %d\n", fdf.map.height, fdf.map.width);
 	//printf("line_widt ---------------> %d\n", line_w);
 
-	fdf.m_control.zoom = 50;
+	fdf.m_control.zoom = 20;
 	print_map(&fdf);
 
 	// fdf.bresshem.x = 10;
@@ -162,6 +162,7 @@ int	main(int argc, char **argv)
 	//img.vars = &vars;
 	mlx_put_image_to_window(fdf.mlx, fdf.win, fdf.img.img, 0, 0);
 	mlx_hook(fdf.win, 2, 0, event_key, &fdf);
+	mlx_hook(fdf.win, 17, 0, ft_close_wrap, &fdf);
 	mlx_loop(fdf.mlx);
 
 	(void)argc;

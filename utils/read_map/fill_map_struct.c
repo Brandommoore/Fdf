@@ -6,7 +6,7 @@
 /*   By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 18:03:06 by mcordoba          #+#    #+#             */
-/*   Updated: 2022/02/25 18:10:37 by mcordoba         ###   ########.fr       */
+/*   Updated: 2022/03/04 19:17:11 by mcordoba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,7 @@ void	insert_data(t_data fdf, char **l_split, int i, int j)
 	if (p_split[1] == NULL)
 		fdf.points[i][j].color = 0xFFFFFF;
 	else
+	{
 		fdf.points[i][j].color = str_to_color(p_split[1]);
+	}
 }

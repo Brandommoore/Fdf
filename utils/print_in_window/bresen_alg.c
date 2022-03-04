@@ -6,7 +6,7 @@
 /*   By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 16:07:46 by mcordoba          #+#    #+#             */
-/*   Updated: 2022/03/04 18:02:18 by mcordoba         ###   ########.fr       */
+/*   Updated: 2022/03/04 18:54:10 by mcordoba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	bresen_alg(t_data *fdf)
 	while ((int)(fdf->bresshem.x - fdf->bresshem.x1)
 			|| (int)(fdf->bresshem.y - fdf->bresshem.y1))
 	{
-		my_mlx_pixel_put(fdf, fdf->bresshem.x, fdf->bresshem.y, 0xffffff);
+		my_mlx_pixel_put(fdf, fdf->bresshem.x, fdf->bresshem.y, fdf->bresshem.color);
 		fdf->bresshem.x += step_x;
 		fdf->bresshem.y += step_y;
 	}
