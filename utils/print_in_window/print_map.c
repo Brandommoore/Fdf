@@ -6,7 +6,7 @@
 /*   By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 18:38:16 by mcordoba          #+#    #+#             */
-/*   Updated: 2022/03/04 17:51:25 by mcordoba         ###   ########.fr       */
+/*   Updated: 2022/03/04 17:58:39 by mcordoba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 static void	bress_line_hor(int x, int y, t_data *fdf)
 {
+	int zoom;
+
+	zoom = fdf->m_control.zoom;
 	fdf->bresshem.x = x;
 	fdf->bresshem.y = y;
 	fdf->bresshem.x1 = x + 1;
@@ -22,6 +25,9 @@ static void	bress_line_hor(int x, int y, t_data *fdf)
 
 static void	bress_line_ver(int x, int y, t_data *fdf)
 {
+	int zoom;
+
+	zoom = fdf->m_control.zoom;
 	fdf->bresshem.x = x;
 	fdf->bresshem.y = y;
 	fdf->bresshem.x1 = x;

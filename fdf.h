@@ -6,7 +6,7 @@
 /*   By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 21:54:34 by marvin            #+#    #+#             */
-/*   Updated: 2022/03/04 17:44:06 by mcordoba         ###   ########.fr       */
+/*   Updated: 2022/03/04 17:56:05 by mcordoba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,12 +59,17 @@ typedef struct s_img
 
 typedef struct s_bresshem
 {
-	float				x;
-	float				y;
-	float				x1;
-	float				y1;
-	int					color;
+	float			x;
+	float			y;
+	float			x1;
+	float			y1;
+	int				color;
 }				t_bresshem;
+
+typedef	struct s_mapcontrol
+{
+	int				zoom;
+}				t_mapcontrol;
 
 typedef struct s_data {
 	void			*mlx;
@@ -74,6 +79,7 @@ typedef struct s_data {
 	t_cord			cord;
 	t_map			map;
 	t_bresshem		bresshem;
+	t_mapcontrol	m_control;
 	t_point			**points;
 	int				init;
 }				t_data;

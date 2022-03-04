@@ -6,7 +6,7 @@
 /*   By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 16:07:46 by mcordoba          #+#    #+#             */
-/*   Updated: 2022/03/04 17:52:07 by mcordoba         ###   ########.fr       */
+/*   Updated: 2022/03/04 18:02:18 by mcordoba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,15 +28,23 @@ static float	f_mod(a)
 		return (a);
 }
 
+static void	zoom(t_data *fdf)
+{
+	fdf->bresshem.x *= fdf->m_control.zoom;
+	fdf->bresshem.y *= fdf->m_control.zoom;
+	fdf->bresshem.x1 *= fdf->m_control.zoom;
+	fdf->bresshem.y1 *= fdf->m_control.zoom;
+}
+
 void	bresen_alg(t_data *fdf)
 {
 	float	step_x;
 	float	step_y;
 	int		max;
 
+	zoom(fdf);
 	step_x = fdf->bresshem.x1 - fdf->bresshem.x;
 	step_y = fdf->bresshem.y1 - fdf->bresshem.y;
-
 	max = f_max(f_mod(step_x), f_mod(step_y));
 	step_x /= max;
 	step_y /= max;
