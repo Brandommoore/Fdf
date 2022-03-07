@@ -6,7 +6,7 @@
 /*   By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 16:44:51 by mcordoba          #+#    #+#             */
-/*   Updated: 2022/03/01 21:23:41 by mcordoba         ###   ########.fr       */
+/*   Updated: 2022/03/07 21:29:14 by mcordoba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,25 @@ int	f_extension(char *route, char *ext)
 	return (1);
 }
 
+static void	check_content(char *route)
+{
+	char	*line;
+	int		fd;
+	
+	fd = open(route, O_RDONLY);
+	if (fd == -1)
+		err_message();
+	line = get_next_line_check(fd);
+	if (!line)
+	{
+		ft_putstr("Empty map\n");
+		free(line);
+		exit (0);
+	}
+	close(fd);
+	free(line);
+}
+
 void	open_map(char *route, t_data *fdf)
 {
 	int	fd_map_w;
@@ -47,6 +66,7 @@ void	open_map(char *route, t_data *fdf)
 
 	if (f_extension(route, ".fdf") == 0)
 		exit(0);
+	check_content(route);
 	fd_map_w = open(route, O_RDONLY);
 	if (fd_map_w == -1)
 		err_message();
