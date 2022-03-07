@@ -6,7 +6,7 @@
 /*   By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 16:07:46 by mcordoba          #+#    #+#             */
-/*   Updated: 2022/03/04 18:54:10 by mcordoba         ###   ########.fr       */
+/*   Updated: 2022/03/07 21:40:32 by mcordoba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static float	f_max(float a, float b)
 		return (b);
 }
 
-static float	f_mod(a)
+static float	f_mod(float a)
 {
 	if (a < 0)
 		return (a * -1);
@@ -48,16 +48,15 @@ void	bresen_alg(t_data *fdf)
 	max = f_max(f_mod(step_x), f_mod(step_y));
 	step_x /= max;
 	step_y /= max;
-
 	while ((int)(fdf->bresshem.x - fdf->bresshem.x1)
 			|| (int)(fdf->bresshem.y - fdf->bresshem.y1))
 	{
-		my_mlx_pixel_put(fdf, fdf->bresshem.x, fdf->bresshem.y, fdf->bresshem.color);
+		my_mlx_pixel_put(fdf, fdf->bresshem.x,
+			fdf->bresshem.y, fdf->bresshem.color);
 		fdf->bresshem.x += step_x;
 		fdf->bresshem.y += step_y;
 	}
 }
-
 
 //Terniary
 //MAX1 (a, b) (a > b ? a :b)
