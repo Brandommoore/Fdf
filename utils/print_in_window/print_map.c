@@ -6,7 +6,7 @@
 /*   By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 18:38:16 by mcordoba          #+#    #+#             */
-/*   Updated: 2022/03/04 19:20:02 by mcordoba         ###   ########.fr       */
+/*   Updated: 2022/03/07 17:55:06 by mcordoba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,10 +49,16 @@ void	print_map(t_data *fdf)
 		while (x < fdf->map.width)
 		{
 			color = fdf->points[y][x].color;
-			bress_line_hor(x, y, color, fdf);
-			bresen_alg(fdf);
-			bress_line_ver(x, y, color, fdf);
-			bresen_alg(fdf);
+			if ((x) < fdf->map.width - 1)
+			{
+				bress_line_hor(x, y, color, fdf);
+				bresen_alg(fdf);
+			}
+			if ((y) < fdf->map.height - 2)
+			{
+				bress_line_ver(x, y, color, fdf);
+				bresen_alg(fdf);
+			}
 			x++;
 		}
 		y++;
