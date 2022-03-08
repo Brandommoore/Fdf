@@ -6,7 +6,7 @@
 /*   By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 16:07:46 by mcordoba          #+#    #+#             */
-/*   Updated: 2022/03/07 21:40:32 by mcordoba         ###   ########.fr       */
+/*   Updated: 2022/03/08 21:39:22 by mcordoba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,10 @@ void	bresen_alg(t_data *fdf)
 	float	step_x;
 	float	step_y;
 	int		max;
+	//int		z;
 
+	//z = fdf->points[(int)fdf->bresshem.x][(int)fdf->bresshem.y].value;
+	//isometric(&fdf->bresshem.x,&fdf->bresshem.y, z);
 	zoom(fdf);
 	step_x = fdf->bresshem.x1 - fdf->bresshem.x;
 	step_y = fdf->bresshem.y1 - fdf->bresshem.y;

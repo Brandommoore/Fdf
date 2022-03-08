@@ -6,7 +6,7 @@
 /*   By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 21:54:34 by marvin            #+#    #+#             */
-/*   Updated: 2022/03/04 19:13:03 by mcordoba         ###   ########.fr       */
+/*   Updated: 2022/03/08 21:22:20 by mcordoba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,6 +97,7 @@ void	errmanag(int argc);
 
 /*--Print_in_window*/
 void	bresen_alg(t_data *fdf);
+void	isometric(float *x, float *y, int z);
 void	my_mlx_pixel_put(t_data *data, int x, int y, int color);
 int		line_y(t_data fdf, int width, int color);
 int		line_x(t_data fdf, int width, int color);
