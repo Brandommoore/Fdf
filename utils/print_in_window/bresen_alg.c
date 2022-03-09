@@ -6,7 +6,7 @@
 /*   By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 16:07:46 by mcordoba          #+#    #+#             */
-/*   Updated: 2022/03/08 21:39:22 by mcordoba         ###   ########.fr       */
+/*   Updated: 2022/03/09 18:48:19 by mcordoba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,18 @@ void	bresen_alg(t_data *fdf)
 	float	step_x;
 	float	step_y;
 	int		max;
-	//int		z;
+	int		z;
+	int		z1;
 
-	//z = fdf->points[(int)fdf->bresshem.x][(int)fdf->bresshem.y].value;
-	//isometric(&fdf->bresshem.x,&fdf->bresshem.y, z);
+	z = fdf->points[(int)fdf->bresshem.x][(int)fdf->bresshem.y].value;
+	z1 = fdf->points[(int)fdf->bresshem.x1][(int)fdf->bresshem.y1].value;
+
+	printf("z_value --> %d\nz1_value --> %d\n", z, z1);
+
 	zoom(fdf);
+	isometric(&(fdf->bresshem.x), &(fdf->bresshem.y), z);
+	isometric(&(fdf->bresshem.x1), &(fdf->bresshem.y1), z1);
+	shift_map(fdf);
 	step_x = fdf->bresshem.x1 - fdf->bresshem.x;
 	step_y = fdf->bresshem.y1 - fdf->bresshem.y;
 	max = f_max(f_mod(step_x), f_mod(step_y));

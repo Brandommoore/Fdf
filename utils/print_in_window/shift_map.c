@@ -1,24 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mlx_put_pixel.c                                    :+:      :+:    :+:   */
+/*   shift_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/09 20:36:13 by mcordoba          #+#    #+#             */
-/*   Updated: 2022/03/09 19:23:11 by mcordoba         ###   ########.fr       */
+/*   Created: 2022/03/09 18:41:28 by mcordoba          #+#    #+#             */
+/*   Updated: 2022/03/09 18:58:11 by mcordoba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../fdf.h"
 
-void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
+void shift_map(t_data *fdf)
 {
-	char	*dst;
-
-	if (y <= 0 || x <= 0 || x >= data->cord.win_w || y >= data->cord.win_h)
-		return ;
-	dst = data->img.addr + (y * data->img.line_length + x
-			* (data->img.bits_per_pixel / 8));
-	*(unsigned int *)dst = color;
+	fdf->bresshem.x += fdf->m_control.x_shift;
+	fdf->bresshem.y += fdf->m_control.y_shift;
+	fdf->bresshem.y1 += fdf->m_control.x_shift;
+	fdf->bresshem.y1 += fdf->m_control.y_shift;
 }
