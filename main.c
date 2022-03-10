@@ -6,7 +6,7 @@
 /*   By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 21:54:29 by marvin            #+#    #+#             */
-/*   Updated: 2022/03/09 19:31:39 by mcordoba         ###   ########.fr       */
+/*   Updated: 2022/03/10 18:11:15 by mcordoba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ int	main(int argc, char **argv)
 	printf("map_height --> %d\nmap_width --> %d\n", fdf.map.height, fdf.map.width);
 	//printf("line_widt ---------------> %d\n", line_w);
 
-	fdf.m_control.zoom = 20;
+	fdf.m_control.zoom = 40;
 	print_map(&fdf);
 
 	// fdf.bresshem.x = 10;
