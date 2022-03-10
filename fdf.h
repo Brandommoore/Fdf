@@ -6,7 +6,7 @@
 /*   By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 21:54:34 by marvin            #+#    #+#             */
-/*   Updated: 2022/03/09 18:57:17 by mcordoba         ###   ########.fr       */
+/*   Updated: 2022/03/10 21:24:42 by mcordoba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,7 @@
 # include "libs/key_macos.h"
 
 typedef struct s_fdmap{
-	int				fd_map_w;
-	int				fd_map_h;
+	int				fd_map_size;
 	int				fd_line_w;
 	int				fd_map;
 }				t_fdmap;
@@ -39,6 +38,7 @@ typedef struct s_point {
 typedef struct s_map {
 	int				width;
 	int				height;
+	int				raw_len_w;
 }				t_map;
 
 typedef struct s_cord {
@@ -83,6 +83,7 @@ typedef struct s_data {
 	t_bresshem		bresshem;
 	t_mapcontrol	m_control;
 	t_point			**points;
+	int				**poin;
 	int				init;
 }				t_data;
 
@@ -113,10 +114,12 @@ int		ft_close_wrap(void *data);
 void	clear_window(t_data *data);
 
 /*Read_map*/
+void	map_size(t_data *fdf);
 int		map_width(t_data *fdf);
 int		map_height(t_data *fdf);
 int		line_width(t_data *fdf);
 void	fill_map_struct(t_data *fdf);
+void	save_map(t_data *fdf);
 void	open_map(char *route, t_data *fdf);
 int		f_extension(char *route, char *ext);
 void	close_map(t_data *fdf);

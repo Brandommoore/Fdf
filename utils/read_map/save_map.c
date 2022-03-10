@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fill_map_struct.c                                  :+:      :+:    :+:   */
+/*   save_map.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/10 18:03:06 by mcordoba          #+#    #+#             */
-/*   Updated: 2022/03/10 21:30:56 by mcordoba         ###   ########.fr       */
+/*   Created: 2022/03/10 19:10:59 by mcordoba          #+#    #+#             */
+/*   Updated: 2022/03/10 21:42:24 by mcordoba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../fdf.h"
 
-void	fill_map_struct(t_data *fdf)
+void	save_map(t_data *fdf)
 {
 	int		i;
 	int		j;
 	int		lw;
 	char	*line;
 	char	**l_split;
+	char	**p_split;
 
 	line = "0";
 	lw = line_width(fdf);
-	fdf->points = malloc((map_height(fdf)) * sizeof(t_point *));
-	if (!fdf->points)
+	fdf->poin = malloc(fdf->map.height * sizeof(int *) + 1);
+	if (!fdf->poin)
 		return ;
 	i = 0;
 	while (line != NULL)
@@ -33,29 +34,17 @@ void	fill_map_struct(t_data *fdf)
 		if (line[0] == '\n')
 			return ;
 		l_split = ft_split(line, ' ');
-		fdf->points[i] = malloc((lw) * sizeof(t_point));
-		if (!fdf->points[i])
+		fdf->poin[i] = malloc(fdf->map.width * sizeof(int) + 1);
+		if (!fdf->poin[i])
 			return ;
 		while (l_split != NULL && l_split[j] != '\0')
-			insert_data(*fdf, l_split, i, j++);
+		{
+			p_split = ft_split(l_split[j], ',');
+			fdf->poin[i][j] = ft_atoi(p_split[0]);
+			j++;
+		}
 		i++;
 	}
 	double_freedom(l_split, line);
-}
-
-void	insert_data(t_data fdf, char **l_split, int i, int j)
-{
-	char	**p_split;
-
-	p_split = ft_split(l_split[j], ',');
-	fdf.points[i][j].value = ft_atoi(p_split[0]);
-	fdf.points[i][j].pos_x = i;
-	fdf.points[i][j].pos_y = j;
-	if (p_split[1] == NULL)
-		fdf.points[i][j].color = 0xFFFFFF;
-	else
-	{
-		fdf.points[i][j].color = str_to_color(p_split[1]);
-	}
 	freedom(p_split);
 }

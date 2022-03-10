@@ -6,7 +6,7 @@
 /*   By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 16:44:51 by mcordoba          #+#    #+#             */
-/*   Updated: 2022/03/07 21:29:14 by mcordoba         ###   ########.fr       */
+/*   Updated: 2022/03/10 21:38:20 by mcordoba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,19 +59,15 @@ static void	check_content(char *route)
 
 void	open_map(char *route, t_data *fdf)
 {
-	int	fd_map_w;
-	int	fd_map_h;
+	int	fd_map_size;
 	int	fd_line_w;
 	int	fd_map;
 
 	if (f_extension(route, ".fdf") == 0)
 		exit(0);
 	check_content(route);
-	fd_map_w = open(route, O_RDONLY);
-	if (fd_map_w == -1)
-		err_message();
-	fd_map_h = open(route, O_RDONLY);
-	if (fd_map_h == -1)
+	fd_map_size = open(route, O_RDONLY);
+	if (fd_map_size == -1)
 		err_message();
 	fd_line_w = open(route, O_RDONLY);
 	if (fd_line_w == -1)
@@ -79,17 +75,13 @@ void	open_map(char *route, t_data *fdf)
 	fd_map = open(route, O_RDONLY);
 	if (fd_map == -1)
 		err_message();
-	printf("fd_map_w --> %d\n", fd_map_w);
-	fdf->fd_map.fd_map_w = fd_map_w;
-	fdf->fd_map.fd_map_h = fd_map_h;
+	fdf->fd_map.fd_map_size = fd_map_size;
 	fdf->fd_map.fd_line_w = fd_line_w;
 	fdf->fd_map.fd_map = fd_map;
 }
 
 void	close_map(t_data *fdf)
 {
-	close(fdf->fd_map.fd_map_w);
-	close(fdf->fd_map.fd_map_h);
 	close(fdf->fd_map.fd_line_w);
 	close(fdf->fd_map.fd_map);
 }

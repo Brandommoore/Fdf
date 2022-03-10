@@ -6,7 +6,7 @@
 /*   By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 21:54:29 by marvin            #+#    #+#             */
-/*   Updated: 2022/03/10 18:11:15 by mcordoba         ###   ########.fr       */
+/*   Updated: 2022/03/10 21:38:05 by mcordoba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,44 @@ int	event_key(int keycode, t_data *data)
 		print_map(data);
 		mlx_put_image_to_window(data->mlx, data->win, data->img.img, 0, 0);
 	}
+	else if (keycode == K_Z)
+	{
+		printf("➞\n");
+		clear_window(data);
+		data->m_control.zoom += 3;
+		print_map(data);
+		mlx_put_image_to_window(data->mlx, data->win, data->img.img, 0, 0);
+	}
+	else if (keycode == K_X)
+	{
+		printf("➞\n");
+		clear_window(data);
+		data->m_control.zoom -= 3;
+		print_map(data);
+		mlx_put_image_to_window(data->mlx, data->win, data->img.img, 0, 0);
+	}
 	return (0);
+}
+
+static void	print_map_values(t_data *fdf)
+{
+	int x;
+	int y;
+
+	printf("map_height --> %d\nmap_width --> %d\n", fdf->map.height, fdf->map.width);
+
+	x = 0;
+	while (x < fdf->map.height - 1)
+	{
+		y = 0;
+		while (y < fdf->map.width)
+		{
+			printf("value --> %d\n", fdf->poin[x][y]);
+			printf("--------------\n");
+			y++;
+		}
+		x++;
+	}
 }
 
 int	main(int argc, char **argv)
@@ -58,10 +95,13 @@ int	main(int argc, char **argv)
 	fdf.init = 1;
 	errmanag(argc);
 	open_map(argv[1], &fdf);
-	fill_map_struct(&fdf);
+	map_size(&fdf);
+	save_map(&fdf);
 	close_map(&fdf);
 	//fdf.map.width = 50;
 	//fdf.map.height = 50;
+
+	print_map_values(&fdf);
 
 	printf("El punto 4-2 tiene por valor --> %d\n", fdf.points[2][2].value);
 	printf("El punto 2-2 tiene por color --> %d\n", fdf.points[2][2].color);
