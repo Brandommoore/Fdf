@@ -6,13 +6,13 @@
 /*   By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 18:38:16 by mcordoba          #+#    #+#             */
-/*   Updated: 2022/03/11 20:20:23 by mcordoba         ###   ########.fr       */
+/*   Updated: 2022/03/11 20:42:48 by mcordoba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../fdf.h"
 
-static void	bress_line_hor(int x, int y, int color, t_data *fdf)
+static void	bress_line_hor(int x, int y, t_data *fdf)
 {
 	int zoom;
 
@@ -21,10 +21,10 @@ static void	bress_line_hor(int x, int y, int color, t_data *fdf)
 	fdf->bresshem.y = y;
 	fdf->bresshem.x1 = x + 1;
 	fdf->bresshem.y1 = y;
-	fdf->bresshem.color = color;
+	//fdf->bresshem.color = color;
 }
 
-static void	bress_line_ver(int x, int y, int color, t_data *fdf)
+static void	bress_line_ver(int x, int y, t_data *fdf)
 {
 	int zoom;
 
@@ -33,14 +33,14 @@ static void	bress_line_ver(int x, int y, int color, t_data *fdf)
 	fdf->bresshem.y = y;
 	fdf->bresshem.x1 = x;
 	fdf->bresshem.y1 = y + 1;
-	fdf->bresshem.color = color;
+	//fdf->bresshem.color = color;
 }
 
 void	print_map(t_data *fdf)
 {
 	int	x;
 	int	y;
-	int	color;
+	//int	color;
 
 	y = 0;
 	while (y < fdf->map.height)
@@ -48,15 +48,15 @@ void	print_map(t_data *fdf)
 		x = 0;
 		while (x < fdf->map.width)
 		{
-			color = 0xFFFFFF;
+			//color = 0xFFFFFF;
 			if (x < fdf->map.width - 1)
 			{
-				bress_line_hor(x, y, color, fdf);
+				bress_line_hor(x, y, fdf);
 				bresen_alg(fdf);
 			}
 			if (y < fdf->map.height - 1)
 			{
-				bress_line_ver(x, y, color, fdf);
+				bress_line_ver(x, y, fdf);
 				bresen_alg(fdf);
 			}
 			x++;

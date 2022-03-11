@@ -6,7 +6,7 @@
 /*   By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 16:07:46 by mcordoba          #+#    #+#             */
-/*   Updated: 2022/03/11 20:31:38 by mcordoba         ###   ########.fr       */
+/*   Updated: 2022/03/11 20:48:00 by mcordoba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,14 @@ static void	zoom(t_data *fdf)
 	fdf->bresshem.y1 *= fdf->m_control.zoom;
 }
 
+static void	color(int z, t_data *fdf)
+{
+	if (z)
+		fdf->bresshem.color = 0xFF0000;
+	else
+		fdf->bresshem.color = 0x0000FF;
+}
+
 //bressen(int x, int y, int x1, int y1)
 
 void	bresen_alg(t_data *fdf)
@@ -55,6 +63,7 @@ void	bresen_alg(t_data *fdf)
 	//printf("z_value --> %d\nz1_value --> %d\n", z, z1);
 
 	zoom(fdf);
+	color(z, fdf);
 	isometric(&(fdf->bresshem.x), &(fdf->bresshem.y), z);
 	isometric(&(fdf->bresshem.x1), &(fdf->bresshem.y1), z1);
 	shift_map(fdf);

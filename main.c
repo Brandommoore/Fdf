@@ -6,7 +6,7 @@
 /*   By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 21:54:29 by marvin            #+#    #+#             */
-/*   Updated: 2022/03/11 20:25:47 by mcordoba         ###   ########.fr       */
+/*   Updated: 2022/03/11 20:46:45 by mcordoba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,27 +84,6 @@ int	event_key(int keycode, t_data *data)
 	return (0);
 }
 
-static void	print_map_values(t_data *fdf)
-{
-	int x;
-	int y;
-
-	printf("map_height --> %d\nmap_width --> %d\n", fdf->map.height, fdf->map.width);
-
-	x = 0;
-	while (x < fdf->map.height)
-	{
-		y = 0;
-		while (y < fdf->map.width)
-		{
-			printf("value --> %d\n", fdf->poin[x][y]);
-			printf("--------------\n");
-			y++;
-		}
-		x++;
-	}
-}
-
 int	main(int argc, char **argv)
 {
 	t_data	fdf;
@@ -117,8 +96,8 @@ int	main(int argc, char **argv)
 	//fdf.map.width = 50;
 	//fdf.map.height = 50;
 
-	print_map_values(&fdf);
-	printf("JAJAJAJAJAAJA_NO\n");
+	//print_map_values(&fdf);
+	//printf("JAJAJAJAJAAJA_NO\n");
 	//printf("El punto 4-2 tiene por valor --> %d\n", fdf.points[2][2].value);
 	//printf("El punto 2-2 tiene por color --> %d\n", fdf.points[2][2].color);
 	//str_to_color("0xFF0000");
