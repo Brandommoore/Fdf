@@ -6,7 +6,7 @@
 /*   By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 21:54:34 by marvin            #+#    #+#             */
-/*   Updated: 2022/03/10 21:24:42 by mcordoba         ###   ########.fr       */
+/*   Updated: 2022/03/11 20:24:21 by mcordoba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,7 @@ typedef	struct s_mapcontrol
 	int				zoom;
 	int				x_shift;
 	int				y_shift;
+	int				height;
 }				t_mapcontrol;
 
 typedef struct s_data {

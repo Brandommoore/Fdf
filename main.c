@@ -6,7 +6,7 @@
 /*   By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 21:54:29 by marvin            #+#    #+#             */
-/*   Updated: 2022/03/10 21:38:05 by mcordoba         ###   ########.fr       */
+/*   Updated: 2022/03/11 20:25:47 by mcordoba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,22 @@ int	event_key(int keycode, t_data *data)
 		print_map(data);
 		mlx_put_image_to_window(data->mlx, data->win, data->img.img, 0, 0);
 	}
+	else if (keycode == K_S)
+	{
+		printf("➞\n");
+		clear_window(data);
+		data->m_control.height += 3;
+		print_map(data);
+		mlx_put_image_to_window(data->mlx, data->win, data->img.img, 0, 0);
+	}
+	else if (keycode == K_D)
+	{
+		printf("➞\n");
+		clear_window(data);
+		data->m_control.height -= 3;
+		print_map(data);
+		mlx_put_image_to_window(data->mlx, data->win, data->img.img, 0, 0);
+	}
 	return (0);
 }
 
@@ -76,7 +92,7 @@ static void	print_map_values(t_data *fdf)
 	printf("map_height --> %d\nmap_width --> %d\n", fdf->map.height, fdf->map.width);
 
 	x = 0;
-	while (x < fdf->map.height - 1)
+	while (x < fdf->map.height)
 	{
 		y = 0;
 		while (y < fdf->map.width)
@@ -102,11 +118,11 @@ int	main(int argc, char **argv)
 	//fdf.map.height = 50;
 
 	print_map_values(&fdf);
-
-	printf("El punto 4-2 tiene por valor --> %d\n", fdf.points[2][2].value);
-	printf("El punto 2-2 tiene por color --> %d\n", fdf.points[2][2].color);
+	printf("JAJAJAJAJAAJA_NO\n");
+	//printf("El punto 4-2 tiene por valor --> %d\n", fdf.points[2][2].value);
+	//printf("El punto 2-2 tiene por color --> %d\n", fdf.points[2][2].color);
 	//str_to_color("0xFF0000");
-	printf("str_to_color --> %d\n", str_to_color("0xFF0000"));
+	//printf("str_to_color --> %d\n", str_to_color("0xFF0000"));
 
 	//print_values_console(fdf);
 	
