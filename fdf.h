@@ -6,7 +6,7 @@
 /*   By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 21:54:34 by marvin            #+#    #+#             */
-/*   Updated: 2022/03/11 20:24:21 by mcordoba         ###   ########.fr       */
+/*   Updated: 2022/03/11 21:16:49 by mcordoba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,10 +68,11 @@ typedef struct s_bresshem
 
 typedef	struct s_mapcontrol
 {
-	int				zoom;
+	float			zoom;
 	int				x_shift;
 	int				y_shift;
 	int				height;
+	float				color_hue;
 }				t_mapcontrol;
 
 typedef struct s_data {

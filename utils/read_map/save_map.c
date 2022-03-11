@@ -6,7 +6,7 @@
 /*   By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 19:10:59 by mcordoba          #+#    #+#             */
-/*   Updated: 2022/03/11 19:48:26 by mcordoba         ###   ########.fr       */
+/*   Updated: 2022/03/11 20:51:55 by mcordoba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,19 +37,14 @@ void	save_map(t_data *fdf)
 		fdf->poin[i] = malloc(lw * sizeof(int));
 		if (!fdf->poin[i])
 			return ;
-		printf("MIERDA\n");
 		while (l_split != NULL && l_split[j] != '\0')
 		{
 			p_split = ft_split(l_split[j], ',');
 			fdf->poin[i][j] = ft_atoi(p_split[0]);
 			j++;
-			printf("MIERDA_TU --> %d <--\n", j);
 		}
 		i++;
-		printf("MIERDA_TU_Girasol --> %d <-- --> %d <-- \n", i, j);
 	}
-	printf("HOLA\n");
 	double_freedom(l_split, line);
-	printf("ADIOS\n");
 	freedom(p_split);
 }

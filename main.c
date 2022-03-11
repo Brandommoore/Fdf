@@ -6,7 +6,7 @@
 /*   By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 21:54:29 by marvin            #+#    #+#             */
-/*   Updated: 2022/03/11 20:46:45 by mcordoba         ###   ########.fr       */
+/*   Updated: 2022/03/11 21:26:15 by mcordoba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int	event_key(int keycode, t_data *data)
 	{
 		printf("➞\n");
 		clear_window(data);
-		data->m_control.zoom += 3;
+		data->m_control.zoom += 3.2;
 		print_map(data);
 		mlx_put_image_to_window(data->mlx, data->win, data->img.img, 0, 0);
 	}
@@ -61,7 +61,7 @@ int	event_key(int keycode, t_data *data)
 	{
 		printf("➞\n");
 		clear_window(data);
-		data->m_control.zoom -= 3;
+		data->m_control.zoom -= 3.2;
 		print_map(data);
 		mlx_put_image_to_window(data->mlx, data->win, data->img.img, 0, 0);
 	}
@@ -69,7 +69,7 @@ int	event_key(int keycode, t_data *data)
 	{
 		printf("➞\n");
 		clear_window(data);
-		data->m_control.height += 3;
+		data->m_control.height += 2;
 		print_map(data);
 		mlx_put_image_to_window(data->mlx, data->win, data->img.img, 0, 0);
 	}
@@ -77,7 +77,16 @@ int	event_key(int keycode, t_data *data)
 	{
 		printf("➞\n");
 		clear_window(data);
-		data->m_control.height -= 3;
+		data->m_control.height -= 2;
+		print_map(data);
+		mlx_put_image_to_window(data->mlx, data->win, data->img.img, 0, 0);
+	}
+	else if (keycode == K_C)
+	{
+		printf("➞\n");
+		clear_window(data);
+		data->m_control.color_hue += 0.2;
+		printf("color --> %f\n", data->m_control.color_hue);
 		print_map(data);
 		mlx_put_image_to_window(data->mlx, data->win, data->img.img, 0, 0);
 	}
@@ -121,8 +130,9 @@ int	main(int argc, char **argv)
 	//printf("line_widt ---------------> %d\n", line_w);
 
 	fdf.m_control.zoom = 40;
+	fdf.m_control.color_hue = 1.03;
+	fdf.m_control.height = 2;
 	print_map(&fdf);
-
 	// fdf.bresshem.x = 10;
 	// fdf.bresshem.y = 10;
 	// fdf.bresshem.x1 = 600;

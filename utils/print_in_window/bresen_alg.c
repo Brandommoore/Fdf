@@ -6,7 +6,7 @@
 /*   By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 16:07:46 by mcordoba          #+#    #+#             */
-/*   Updated: 2022/03/11 20:48:00 by mcordoba         ###   ########.fr       */
+/*   Updated: 2022/03/11 21:27:31 by mcordoba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,11 @@ static void	zoom(t_data *fdf)
 static void	color(int z, t_data *fdf)
 {
 	if (z)
-		fdf->bresshem.color = 0xFF0000;
+		fdf->bresshem.color = 0x115500 * 2 * fdf->m_control.color_hue * fdf->m_control.color_hue;
 	else
-		fdf->bresshem.color = 0x0000FF;
+	{
+		fdf->bresshem.color = 0x005511 * 2 * fdf->m_control.color_hue * fdf->m_control.color_hue;
+	}
 }
 
 //bressen(int x, int y, int x1, int y1)
