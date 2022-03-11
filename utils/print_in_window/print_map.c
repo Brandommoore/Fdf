@@ -6,7 +6,7 @@
 /*   By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 18:38:16 by mcordoba          #+#    #+#             */
-/*   Updated: 2022/03/11 20:42:48 by mcordoba         ###   ########.fr       */
+/*   Updated: 2022/03/11 21:39:46 by mcordoba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ static void	bress_line_hor(int x, int y, t_data *fdf)
 	fdf->bresshem.y = y;
 	fdf->bresshem.x1 = x + 1;
 	fdf->bresshem.y1 = y;
-	//fdf->bresshem.color = color;
 }
 
 static void	bress_line_ver(int x, int y, t_data *fdf)
@@ -33,14 +32,12 @@ static void	bress_line_ver(int x, int y, t_data *fdf)
 	fdf->bresshem.y = y;
 	fdf->bresshem.x1 = x;
 	fdf->bresshem.y1 = y + 1;
-	//fdf->bresshem.color = color;
 }
 
 void	print_map(t_data *fdf)
 {
 	int	x;
 	int	y;
-	//int	color;
 
 	y = 0;
 	while (y < fdf->map.height)
@@ -48,7 +45,6 @@ void	print_map(t_data *fdf)
 		x = 0;
 		while (x < fdf->map.width)
 		{
-			//color = 0xFFFFFF;
 			if (x < fdf->map.width - 1)
 			{
 				bress_line_hor(x, y, fdf);

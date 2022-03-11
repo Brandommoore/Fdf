@@ -6,7 +6,7 @@
 /*   By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 16:07:46 by mcordoba          #+#    #+#             */
-/*   Updated: 2022/03/11 21:27:31 by mcordoba         ###   ########.fr       */
+/*   Updated: 2022/03/11 21:30:16 by mcordoba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,6 @@ static void	color(int z, t_data *fdf)
 	}
 }
 
-//bressen(int x, int y, int x1, int y1)
-
 void	bresen_alg(t_data *fdf)
 {
 	float	step_x;
@@ -55,15 +53,9 @@ void	bresen_alg(t_data *fdf)
 	int		max;
 	int		z;
 	int		z1;
-	
-	//printf("point_z_x --> %d\npoint_z_y --> %d\n", (int)fdf->bresshem.x, (int)fdf->bresshem.y);
-	//printf("point_z1_x --> %d\npoint_z1_y --> %d\n", (int)fdf->bresshem.x1, (int)fdf->bresshem.y1);
 
 	z = fdf->poin[(int)fdf->bresshem.y][(int)fdf->bresshem.x] * fdf->m_control.height;
 	z1 = fdf->poin[(int)fdf->bresshem.y1][(int)fdf->bresshem.x1] * fdf->m_control.height;
-
-	//printf("z_value --> %d\nz1_value --> %d\n", z, z1);
-
 	zoom(fdf);
 	color(z, fdf);
 	isometric(&(fdf->bresshem.x), &(fdf->bresshem.y), z);
