@@ -6,7 +6,7 @@
 /*   By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 19:16:07 by mcordoba          #+#    #+#             */
-/*   Updated: 2022/03/04 19:16:36 by mcordoba         ###   ########.fr       */
+/*   Updated: 2022/03/14 19:30:21 by mcordoba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 char	*color_format(char *color)
 {
-	int color_str_len;
-	int j;
-	int i;
-	char *color_hex;
+	int		color_str_len;
+	int		j;
+	int		i;
+	char	*color_hex;
 
 	j = 2;
 	i = 0;
@@ -35,11 +35,11 @@ char	*color_format(char *color)
 
 int	str_to_color(char *color)
 {
-	int color_len;
-	int exp;
-	int color_val;
-	int letter_val;
-	int nb_exp;
+	int		color_len;
+	int		exp;
+	int		color_val;
+	int		letter_val;
+	int		nb_exp;
 
 	color = color_format(color);
 	color_val = 0;
@@ -58,8 +58,8 @@ int	str_to_color(char *color)
 
 int	letter_value(char letter)
 {
-	char *base;
-	int val;
+	char	*base;
+	int		val;
 
 	val = 0;
 	base = "0123456789ABCDEF";

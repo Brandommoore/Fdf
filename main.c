@@ -6,92 +6,11 @@
 /*   By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 21:54:29 by marvin            #+#    #+#             */
-/*   Updated: 2022/03/14 17:21:04 by mcordoba         ###   ########.fr       */
+/*   Updated: 2022/03/14 19:32:12 by mcordoba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
-
-int	event_key(int keycode, t_data *data)
-{
-	//printf("keycode is --> %d\n", keycode);
-	if (keycode == 53)
-		ft_close(data);
-	else if (keycode == K_AR_U)
-	{
-		printf("↑\n");
-		clear_window(data);
-		data->m_control.y_shift -= 10;
-		print_map(data);
-		mlx_put_image_to_window(data->mlx, data->win, data->img.img, 0, 0);
-	}
-	else if (keycode == K_AR_D)
-	{
-		printf("↓\n");
-		clear_window(data);
-		data->m_control.y_shift += 10;
-		print_map(data);
-		mlx_put_image_to_window(data->mlx, data->win, data->img.img, 0, 0);
-	}
-	else if (keycode == K_AR_L)
-	{
-		printf("←\n");
-		clear_window(data);
-		data->m_control.x_shift -= 10;
-		print_map(data);
-		mlx_put_image_to_window(data->mlx, data->win, data->img.img, 0, 0);
-	}
-	else if (keycode == K_AR_R)
-	{
-		printf("➞\n");
-		clear_window(data);
-		data->m_control.x_shift += 10;
-		print_map(data);
-		mlx_put_image_to_window(data->mlx, data->win, data->img.img, 0, 0);
-	}
-	else if (keycode == K_Z)
-	{
-		printf("➞\n");
-		clear_window(data);
-		data->m_control.zoom += 3.2;
-		print_map(data);
-		mlx_put_image_to_window(data->mlx, data->win, data->img.img, 0, 0);
-	}
-	else if (keycode == K_X)
-	{
-		printf("➞\n");
-		clear_window(data);
-		data->m_control.zoom -= 3.2;
-		print_map(data);
-		mlx_put_image_to_window(data->mlx, data->win, data->img.img, 0, 0);
-	}
-	else if (keycode == K_S)
-	{
-		printf("➞\n");
-		clear_window(data);
-		data->m_control.height += 1.5;
-		print_map(data);
-		mlx_put_image_to_window(data->mlx, data->win, data->img.img, 0, 0);
-	}
-	else if (keycode == K_D)
-	{
-		printf("➞\n");
-		clear_window(data);
-		data->m_control.height -= 1.5;
-		print_map(data);
-		mlx_put_image_to_window(data->mlx, data->win, data->img.img, 0, 0);
-	}
-	else if (keycode == K_C)
-	{
-		printf("➞\n");
-		clear_window(data);
-		data->m_control.color_hue += 0.2;
-		printf("color --> %f\n", data->m_control.color_hue);
-		print_map(data);
-		mlx_put_image_to_window(data->mlx, data->win, data->img.img, 0, 0);
-	}
-	return (0);
-}
 
 int	main(int argc, char **argv)
 {

@@ -6,7 +6,7 @@
 /*   By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 21:54:34 by marvin            #+#    #+#             */
-/*   Updated: 2022/03/14 17:20:19 by mcordoba         ###   ########.fr       */
+/*   Updated: 2022/03/14 19:29:11 by mcordoba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,12 +66,12 @@ typedef struct s_bresshem
 	int				color;
 }				t_bresshem;
 
-typedef	struct s_mapcontrol
+typedef struct s_mapcontrol
 {
 	float			zoom;
 	int				x_shift;
 	int				y_shift;
-	float				height;
+	float			height;
 	float			color_hue;
 }				t_mapcontrol;
 
@@ -88,9 +88,6 @@ typedef struct s_data {
 	int				**poin;
 	int				init;
 }				t_data;
-
-/*MAIN*/
-int		event_key(int keycode, t_data *data);
 
 /*UTILS*/
 void	freedom(char **matrix);
@@ -113,10 +110,28 @@ int		line_x(t_data fdf, int width, int color);
 void	print_map(t_data *fdf);
 void	print_values_console(t_data *fdf);
 
-/*Events*/
+/*EVENTS*/
+int		event_key(int keycode, t_data *fdf);
 void	ft_close(t_data *data);
 int		ft_close_wrap(void *data);
 void	clear_window(t_data *data);
+
+/*Shift_event*/
+void	shift_up(t_data *fdf);
+void	shift_down(t_data *fdf);
+void	shift_left(t_data *fdf);
+void	shift_right(t_data *fdf);
+
+/*Zoom_event*/
+void	zoom_up(t_data *fdf);
+void	zoom_down(t_data *fdf);
+
+/*Height_event*/
+void	height_up(t_data *fdf);
+void	height_down(t_data *fdf);
+
+/*Color_event*/
+void	color_event(t_data *fdf);
 
 /*Read_map*/
 void	map_size(t_data *fdf);
