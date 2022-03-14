@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   shift_map.c                                        :+:      :+:    :+:   */
+/*   bress_pixel.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/09 18:41:28 by mcordoba          #+#    #+#             */
-/*   Updated: 2022/03/14 11:26:49 by mcordoba         ###   ########.fr       */
+/*   Created: 2022/03/14 11:19:24 by mcordoba          #+#    #+#             */
+/*   Updated: 2022/03/14 11:24:07 by mcordoba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../fdf.h"
 
-void	shift_map(t_data *fdf)
+void	bress_pixel_print(t_data *fdf, float step_x, float step_y)
 {
-	fdf->bresshem.x += fdf->m_control.x_shift;
-	fdf->bresshem.y += fdf->m_control.y_shift;
-	fdf->bresshem.x1 += fdf->m_control.x_shift;
-	fdf->bresshem.y1 += fdf->m_control.y_shift;
+	my_mlx_pixel_put(fdf, fdf->bresshem.x,
+		fdf->bresshem.y, fdf->bresshem.color);
+	fdf->bresshem.x += step_x;
+	fdf->bresshem.y += step_y;
 }

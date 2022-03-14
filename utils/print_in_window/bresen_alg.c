@@ -6,7 +6,7 @@
 /*   By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 16:07:46 by mcordoba          #+#    #+#             */
-/*   Updated: 2022/03/11 21:30:16 by mcordoba         ###   ########.fr       */
+/*   Updated: 2022/03/14 11:23:03 by mcordoba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,12 @@ static void	zoom(t_data *fdf)
 static void	color(int z, t_data *fdf)
 {
 	if (z)
-		fdf->bresshem.color = 0x115500 * 2 * fdf->m_control.color_hue * fdf->m_control.color_hue;
+		fdf->bresshem.color = 0x115500 * 2
+			* fdf->m_control.color_hue * fdf->m_control.color_hue;
 	else
 	{
-		fdf->bresshem.color = 0x005511 * 2 * fdf->m_control.color_hue * fdf->m_control.color_hue;
+		fdf->bresshem.color = 0x005511 * 2
+			* fdf->m_control.color_hue * fdf->m_control.color_hue;
 	}
 }
 
@@ -54,8 +56,8 @@ void	bresen_alg(t_data *fdf)
 	int		z;
 	int		z1;
 
-	z = fdf->poin[(int)fdf->bresshem.y][(int)fdf->bresshem.x] * fdf->m_control.height;
-	z1 = fdf->poin[(int)fdf->bresshem.y1][(int)fdf->bresshem.x1] * fdf->m_control.height;
+	z = z_value(fdf);
+	z1 = z1_value(fdf);
 	zoom(fdf);
 	color(z, fdf);
 	isometric(&(fdf->bresshem.x), &(fdf->bresshem.y), z);
@@ -69,10 +71,7 @@ void	bresen_alg(t_data *fdf)
 	while ((int)(fdf->bresshem.x - fdf->bresshem.x1)
 			|| (int)(fdf->bresshem.y - fdf->bresshem.y1))
 	{
-		my_mlx_pixel_put(fdf, fdf->bresshem.x,
-			fdf->bresshem.y, fdf->bresshem.color);
-		fdf->bresshem.x += step_x;
-		fdf->bresshem.y += step_y;
+		bress_pixel_print(fdf, step_x, step_y);
 	}
 }
 

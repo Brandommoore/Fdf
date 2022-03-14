@@ -1,21 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   shift_map.c                                        :+:      :+:    :+:   */
+/*   z_values.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/09 18:41:28 by mcordoba          #+#    #+#             */
-/*   Updated: 2022/03/14 11:26:49 by mcordoba         ###   ########.fr       */
+/*   Created: 2022/03/14 11:10:54 by mcordoba          #+#    #+#             */
+/*   Updated: 2022/03/14 11:27:26 by mcordoba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../fdf.h"
 
-void	shift_map(t_data *fdf)
+int	z_value(t_data *fdf)
 {
-	fdf->bresshem.x += fdf->m_control.x_shift;
-	fdf->bresshem.y += fdf->m_control.y_shift;
-	fdf->bresshem.x1 += fdf->m_control.x_shift;
-	fdf->bresshem.y1 += fdf->m_control.y_shift;
+	int	z;
+
+	z = fdf->poin[(int)fdf->bresshem.y][(int)fdf->bresshem.x]
+		* fdf->m_control.height;
+	return (z);
+}
+
+int	z1_value(t_data *fdf)
+{
+	int	z1;
+
+	z1 = fdf->poin[(int)fdf->bresshem.y1][(int)fdf->bresshem.x1]
+		* fdf->m_control.height;
+	return (z1);
 }

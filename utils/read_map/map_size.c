@@ -6,7 +6,7 @@
 /*   By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 21:02:47 by mcordoba          #+#    #+#             */
-/*   Updated: 2022/03/11 19:20:13 by mcordoba         ###   ########.fr       */
+/*   Updated: 2022/03/14 17:04:36 by mcordoba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ int	map_height(t_data *fdf)
 	return (h);
 }
 
-void map_size(t_data *fdf)
+void	map_size(t_data *fdf)
 {
 	map_width(fdf);
 	map_height(fdf);

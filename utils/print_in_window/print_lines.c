@@ -6,7 +6,7 @@
 /*   By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 20:37:37 by mcordoba          #+#    #+#             */
-/*   Updated: 2022/02/21 21:33:50 by mcordoba         ###   ########.fr       */
+/*   Updated: 2022/03/14 11:24:24 by mcordoba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,3 @@ int	line_x(t_data fdf, int width, int color)
 	}
 	return (j + fdf.cord.px);
 }
-

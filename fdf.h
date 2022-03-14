@@ -6,7 +6,7 @@
 /*   By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 21:54:34 by marvin            #+#    #+#             */
-/*   Updated: 2022/03/11 21:16:49 by mcordoba         ###   ########.fr       */
+/*   Updated: 2022/03/14 17:20:19 by mcordoba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,8 +71,8 @@ typedef	struct s_mapcontrol
 	float			zoom;
 	int				x_shift;
 	int				y_shift;
-	int				height;
-	float				color_hue;
+	float				height;
+	float			color_hue;
 }				t_mapcontrol;
 
 typedef struct s_data {
@@ -102,8 +102,11 @@ void	errmanag(int argc);
 
 /*--Print_in_window*/
 void	bresen_alg(t_data *fdf);
+int		z_value(t_data *fdf);
+int		z1_value(t_data *fdf);
 void	isometric(float *x, float *y, int z);
 void	shift_map(t_data *fdf);
+void	bress_pixel_print(t_data *fdf, float step_x, float step_y);
 void	my_mlx_pixel_put(t_data *data, int x, int y, int color);
 int		line_y(t_data fdf, int width, int color);
 int		line_x(t_data fdf, int width, int color);
