@@ -4,3 +4,5 @@
 .vscode
 # Ignora los .o
 *.o
+# Ignora los txt
+*.txt

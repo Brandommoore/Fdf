@@ -6,7 +6,7 @@
 /*   By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 19:10:59 by mcordoba          #+#    #+#             */
-/*   Updated: 2022/03/15 14:40:14 by mcordoba         ###   ########.fr       */
+/*   Updated: 2022/03/15 15:27:31 by mcordoba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,22 +35,6 @@ static void	malloc_upoint(t_data *fdf, int i, int lw)
 		return ;
 }
 
-// static void	check_line_width(t_data *fdf, int lw)
-// {
-	// int current_lw;
-
-	// current_lw = line_width(fdf);
-	// while (current_lw != 0)
-	// {
-	// 	if (lw != current_lw)
-	// 	{
-	// 		ft_putstr("Map error");
-	// 		exit (0);
-	// 	}
-	// 	current_lw = line_width(fdf);
-	// }
-// }
-
 void	save_map(t_data *fdf)
 {
 	int		i;
@@ -61,7 +45,6 @@ void	save_map(t_data *fdf)
 
 	line = "0";
 	lw = line_width(fdf);
-	//check_line_width(fdf, lw);
 	malloc_dpoint(fdf);
 	i = 0;
 	while (line != NULL && i < fdf->map.height)
@@ -73,7 +56,8 @@ void	save_map(t_data *fdf)
 		while (l_split != NULL && l_split[j] != '\0')
 			fill_point(fdf, l_split, i, j++);
 		ft_putstr(".");
+		freedom(l_split);
+		free(line);
 		i++;
 	}
-	double_freedom(l_split, line);
 }

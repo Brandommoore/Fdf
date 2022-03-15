@@ -6,7 +6,7 @@
 /*   By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 21:54:29 by marvin            #+#    #+#             */
-/*   Updated: 2022/03/15 14:45:42 by mcordoba         ###   ########.fr       */
+/*   Updated: 2022/03/15 15:36:19 by mcordoba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,10 @@ static void	print_instructions(void)
 static void	init_program(t_data *fdf, int argc, char **argv)
 {
 	errmanag(argc);
-	check_map_width(argv[1]);
-	ft_putstr("Fdf is opening ");
+	ft_putstr("\nFdf is opening ");
 	ft_putstr(argv[1]);
 	ft_putstr(" [.");
+	check_map_width(argv[1]);
 	open_map(argv[1], fdf);
 	map_size(fdf);
 	save_map(fdf);

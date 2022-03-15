@@ -6,7 +6,7 @@
 /*   By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 14:29:43 by mcordoba          #+#    #+#             */
-/*   Updated: 2022/03/15 14:54:01 by mcordoba         ###   ########.fr       */
+/*   Updated: 2022/03/15 14:58:53 by mcordoba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	check_map_width(char *route)
 	{
 		if (lw != current_lw)
 		{
-			ft_putstr("Map error\n");
+			ft_putstr("]  Map error\n");
 			exit (0);
 		}
 		current_lw = line_map_width(fd);
