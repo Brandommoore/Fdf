@@ -6,7 +6,7 @@
 /*   By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 21:54:29 by marvin            #+#    #+#             */
-/*   Updated: 2022/03/15 18:28:03 by mcordoba         ###   ########.fr       */
+/*   Updated: 2022/03/15 18:30:08 by mcordoba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static void	print_instructions(void)
 	ft_putstr("|     |                                 |..|       |..|    |\n");
 	ft_putstr("|     ↳ Map HUE    --> Key C           |..| |.....| |..|   |\n");
 	ft_putstr("|                                      $       $       $   |\n");
-	ft_putstr("|                                             $$$          |\n");
+	ft_putstr("|      v1.0                                   $$$          |\n");
 	ft_putstr("|+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-|\n");
 }
 
