@@ -6,7 +6,7 @@
 /*   By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 16:44:51 by mcordoba          #+#    #+#             */
-/*   Updated: 2022/03/15 14:29:29 by mcordoba         ###   ########.fr       */
+/*   Updated: 2022/03/15 18:25:02 by mcordoba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static void	err_message(void)
 {
-	ft_putstr("Error al abrir el mapa\n");
+	ft_putstr("]  Error al abrir el mapa\n");
 	exit (0);
 }
 
@@ -29,7 +29,7 @@ int	f_extension(char *route, char *ext)
 	{
 		if (route[route_len - 1] != ext[ext_len - 1])
 		{
-			ft_putstr("Map error, bust be: .fdf\n");
+			ft_putstr("]  Map error, bust be: .fdf\n");
 			return (0);
 		}
 		ext_len--;
@@ -49,7 +49,7 @@ static void	check_content(char *route)
 	line = get_next_line_check(fd);
 	if (!line)
 	{
-		ft_putstr("Empty map\n");
+		ft_putstr("]  Empty map\n");
 		free(line);
 		exit (0);
 	}

@@ -6,7 +6,7 @@
 /*   By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 21:54:29 by marvin            #+#    #+#             */
-/*   Updated: 2022/03/15 15:36:19 by mcordoba         ###   ########.fr       */
+/*   Updated: 2022/03/15 18:28:03 by mcordoba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static void	print_instructions(void)
 	ft_putstr("|                                          |   O   |       |\n");
 	ft_putstr("|    DEPTH CONTROLS                        |       |       |\n");
 	ft_putstr("|     |                                    |   S   |       |\n");
-	ft_putstr("|     ↳ Map depthup    --> Key S           |   T   |       |\n");
+	ft_putstr("|     ↳ Map depth up   --> Key S           |   T   |       |\n");
 	ft_putstr("|     ↳ Map depth down --> Key D           |   A   |       |\n");
 	ft_putstr("|                                         ||   R   ||      |\n");
 	ft_putstr("|    COLOR HUE                           |.|   S   |.|     |\n");
@@ -70,10 +70,12 @@ static void	init_window(t_data *fdf, int width, int height)
 
 static void	set_params(t_data *fdf)
 {
-	fdf->m_control.zoom = 40;
+	fdf->m_control.zoom = (720 / fdf->map.width) * 1.5;
 	fdf->m_control.color_hue = 1.03;
 	fdf->m_control.height = 1.2;
 	fdf->m_control.rot_fact = 1;
+	fdf->m_control.x_shift = (1920 / fdf->map.width) * 3.5;
+	fdf->m_control.y_shift = (720 / fdf->map.height);
 }
 
 int	main(int argc, char **argv)

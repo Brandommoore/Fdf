@@ -6,7 +6,7 @@
 /*   By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 15:51:17 by mcordoba          #+#    #+#             */
-/*   Updated: 2022/03/07 21:36:42 by mcordoba         ###   ########.fr       */
+/*   Updated: 2022/03/15 18:23:10 by mcordoba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,8 @@
 void	errmanag(int argc)
 {
 	if (argc != 2)
+	{
+		ft_putstr("Please, insert a valid map: 'map.fdf'\n");
 		exit (0);
+	}
 }
