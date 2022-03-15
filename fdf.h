@@ -6,7 +6,7 @@
 /*   By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 21:54:34 by marvin            #+#    #+#             */
-/*   Updated: 2022/03/14 19:29:11 by mcordoba         ###   ########.fr       */
+/*   Updated: 2022/03/15 14:34:30 by mcordoba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,7 @@ typedef struct s_mapcontrol
 	int				y_shift;
 	float			height;
 	float			color_hue;
+	float			rot_fact;
 }				t_mapcontrol;
 
 typedef struct s_data {
@@ -96,12 +97,13 @@ void	ft_putstr(const char *str);
 
 /*ERRMANAG*/
 void	errmanag(int argc);
+void	check_map_width(char *route);
 
 /*--Print_in_window*/
 void	bresen_alg(t_data *fdf);
 int		z_value(t_data *fdf);
 int		z1_value(t_data *fdf);
-void	isometric(float *x, float *y, int z);
+void	isometric(t_data *fdf, float *x, float *y, int z);
 void	shift_map(t_data *fdf);
 void	bress_pixel_print(t_data *fdf, float step_x, float step_y);
 void	my_mlx_pixel_put(t_data *data, int x, int y, int color);
@@ -132,6 +134,10 @@ void	height_down(t_data *fdf);
 
 /*Color_event*/
 void	color_event(t_data *fdf);
+
+/*Rotate_event*/
+void	rotate_event_plus(t_data *fdf);
+void	rotate_event_minus(t_data *fdf);
 
 /*Read_map*/
 void	map_size(t_data *fdf);

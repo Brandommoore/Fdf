@@ -6,7 +6,7 @@
 #    By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/26 20:29:36 by marvin            #+#    #+#              #
-#    Updated: 2022/03/14 19:26:49 by mcordoba         ###   ########.fr        #
+#    Updated: 2022/03/15 14:32:09 by mcordoba         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,11 +14,13 @@ SRC = 	main.c \
 		utils/freedom.c \
 		utils/ft_putstr.c \
 		utils/errmanag/errmanag.c \
+		utils/errmanag/check_map_width.c \
 		utils/events/events.c \
 		utils/events/shift_event.c \
 		utils/events/zoom_event.c \
 		utils/events/height_event.c \
 		utils/events/color_event.c \
+		utils/events/rotate_event.c \
 		utils/events/close_clear.c \
 		utils/print_in_window/bresen_alg.c \
 		utils/print_in_window/z_values.c \

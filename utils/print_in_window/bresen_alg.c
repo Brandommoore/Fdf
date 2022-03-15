@@ -6,7 +6,7 @@
 /*   By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 16:07:46 by mcordoba          #+#    #+#             */
-/*   Updated: 2022/03/14 11:23:03 by mcordoba         ###   ########.fr       */
+/*   Updated: 2022/03/15 12:34:24 by mcordoba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,8 @@ void	bresen_alg(t_data *fdf)
 	z1 = z1_value(fdf);
 	zoom(fdf);
 	color(z, fdf);
-	isometric(&(fdf->bresshem.x), &(fdf->bresshem.y), z);
-	isometric(&(fdf->bresshem.x1), &(fdf->bresshem.y1), z1);
+	isometric(fdf, &(fdf->bresshem.x), &(fdf->bresshem.y), z);
+	isometric(fdf, &(fdf->bresshem.x1), &(fdf->bresshem.y1), z1);
 	shift_map(fdf);
 	step_x = fdf->bresshem.x1 - fdf->bresshem.x;
 	step_y = fdf->bresshem.y1 - fdf->bresshem.y;
