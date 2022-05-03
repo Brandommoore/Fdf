@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mlx_put_pixel.c                                    :+:      :+:    :+:   */
+/*   rotate_event.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/09 20:36:13 by mcordoba          #+#    #+#             */
-/*   Updated: 2022/03/15 15:16:45 by mcordoba         ###   ########.fr       */
+/*   Created: 2022/03/14 19:53:01 by mcordoba          #+#    #+#             */
+/*   Updated: 2022/03/14 20:12:14 by mcordoba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../fdf.h"
 
-void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
+void	rotate_event_plus(t_data *fdf)
 {
-	char	*dst;
+	clear_window(fdf);
+	fdf->m_control.rot_fact += 3;
+	print_map(fdf);
+	mlx_put_image_to_window(fdf->mlx, fdf->win, fdf->img.img, 0, 0);
+}
 
-	if (y <= 0 || x <= 0 || x >= data->cord.win_w || y >= data->cord.win_h)
-		return ;
-	dst = data->img.addr + (y * data->img.line_length + x
-			* (data->img.bits_per_pixel / 8));
-	*(unsigned int *)dst = color;
+void	rotate_event_minus(t_data *fdf)
+{
+	clear_window(fdf);
+	fdf->m_control.rot_fact -= 3;
+	print_map(fdf);
+	mlx_put_image_to_window(fdf->mlx, fdf->win, fdf->img.img, 0, 0);
 }

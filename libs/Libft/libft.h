@@ -6,7 +6,7 @@
 /*   By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 13:08:40 by mcordoba          #+#    #+#             */
-/*   Updated: 2022/02/24 20:40:06 by mcordoba         ###   ########.fr       */
+/*   Updated: 2022/03/15 14:52:11 by mcordoba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,9 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 /*GNL*/
 char	*get_next_line(int fd);
+char	*get_next_line_check(int fd);
 char	*get_next_line_w(int fd);
+char	*get_next_line_w_map(int fd);
 char	*get_next_line_wl(int fd);
 char	*get_next_line_h(int fd);
 char	*ft_strjoin(char const *s1, char const *s2);

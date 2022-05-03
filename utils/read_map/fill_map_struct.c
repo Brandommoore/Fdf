@@ -6,7 +6,7 @@
 /*   By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 18:03:06 by mcordoba          #+#    #+#             */
-/*   Updated: 2022/02/25 18:10:37 by mcordoba         ###   ########.fr       */
+/*   Updated: 2022/03/14 17:04:00 by mcordoba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	fill_map_struct(t_data *fdf)
 
 	line = "0";
 	lw = line_width(fdf);
-	fdf->points = malloc((map_height(fdf)) * sizeof(t_point *) + 1);
+	fdf->points = malloc((map_height(fdf)) * sizeof(t_point *));
 	if (!fdf->points)
 		return ;
 	i = 0;
@@ -31,12 +31,11 @@ void	fill_map_struct(t_data *fdf)
 		j = 0;
 		line = get_next_line(fdf->fd_map.fd_map);
 		l_split = ft_split(line, ' ');
-		fdf->points[i] = malloc((lw) * sizeof(t_point) + 1);
+		fdf->points[i] = malloc((lw) * sizeof(t_point));
 		if (!fdf->points[i])
 			return ;
 		while (l_split != NULL && l_split[j] != '\0')
-			insert_data(*fdf, l_split, i, j++);
-		i++;
+			insert_data(*fdf, l_split, i++, j++);
 	}
 	double_freedom(l_split, line);
 }
@@ -52,5 +51,8 @@ void	insert_data(t_data fdf, char **l_split, int i, int j)
 	if (p_split[1] == NULL)
 		fdf.points[i][j].color = 0xFFFFFF;
 	else
+	{
 		fdf.points[i][j].color = str_to_color(p_split[1]);
+	}
+	freedom(p_split);
 }

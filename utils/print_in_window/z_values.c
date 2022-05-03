@@ -1,24 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mlx_put_pixel.c                                    :+:      :+:    :+:   */
+/*   z_values.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/09 20:36:13 by mcordoba          #+#    #+#             */
-/*   Updated: 2022/03/15 15:16:45 by mcordoba         ###   ########.fr       */
+/*   Created: 2022/03/14 11:10:54 by mcordoba          #+#    #+#             */
+/*   Updated: 2022/03/14 11:27:26 by mcordoba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../fdf.h"
 
-void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
+int	z_value(t_data *fdf)
 {
-	char	*dst;
+	int	z;
 
-	if (y <= 0 || x <= 0 || x >= data->cord.win_w || y >= data->cord.win_h)
-		return ;
-	dst = data->img.addr + (y * data->img.line_length + x
-			* (data->img.bits_per_pixel / 8));
-	*(unsigned int *)dst = color;
+	z = fdf->poin[(int)fdf->bresshem.y][(int)fdf->bresshem.x]
+		* fdf->m_control.height;
+	return (z);
+}
+
+int	z1_value(t_data *fdf)
+{
+	int	z1;
+
+	z1 = fdf->poin[(int)fdf->bresshem.y1][(int)fdf->bresshem.x1]
+		* fdf->m_control.height;
+	return (z1);
 }

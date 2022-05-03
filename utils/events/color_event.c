@@ -1,24 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mlx_put_pixel.c                                    :+:      :+:    :+:   */
+/*   color_event.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/09 20:36:13 by mcordoba          #+#    #+#             */
-/*   Updated: 2022/03/15 15:16:45 by mcordoba         ###   ########.fr       */
+/*   Created: 2022/03/14 19:12:07 by mcordoba          #+#    #+#             */
+/*   Updated: 2022/03/14 19:41:58 by mcordoba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../fdf.h"
 
-void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
+void	color_event(t_data *fdf)
 {
-	char	*dst;
-
-	if (y <= 0 || x <= 0 || x >= data->cord.win_w || y >= data->cord.win_h)
-		return ;
-	dst = data->img.addr + (y * data->img.line_length + x
-			* (data->img.bits_per_pixel / 8));
-	*(unsigned int *)dst = color;
+	clear_window(fdf);
+	fdf->m_control.color_hue += 0.2;
+	print_map(fdf);
+	mlx_put_image_to_window(fdf->mlx, fdf->win, fdf->img.img, 0, 0);
 }

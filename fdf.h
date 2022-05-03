@@ -6,7 +6,7 @@
 /*   By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 21:54:34 by marvin            #+#    #+#             */
-/*   Updated: 2022/03/01 18:26:01 by mcordoba         ###   ########.fr       */
+/*   Updated: 2022/03/15 14:34:30 by mcordoba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,7 @@
 # include "libs/key_macos.h"
 
 typedef struct s_fdmap{
-	int				fd_map_w;
-	int				fd_map_h;
+	int				fd_map_size;
 	int				fd_line_w;
 	int				fd_map;
 }				t_fdmap;
@@ -39,6 +38,7 @@ typedef struct s_point {
 typedef struct s_map {
 	int				width;
 	int				height;
+	int				raw_len_w;
 }				t_map;
 
 typedef struct s_cord {
@@ -57,6 +57,25 @@ typedef struct s_img
 	int				endian;
 }				t_img;
 
+typedef struct s_bresshem
+{
+	float			x;
+	float			y;
+	float			x1;
+	float			y1;
+	int				color;
+}				t_bresshem;
+
+typedef struct s_mapcontrol
+{
+	float			zoom;
+	int				x_shift;
+	int				y_shift;
+	float			height;
+	float			color_hue;
+	float			rot_fact;
+}				t_mapcontrol;
+
 typedef struct s_data {
 	void			*mlx;
 	void			*win;
@@ -64,12 +83,12 @@ typedef struct s_data {
 	t_img			img;
 	t_cord			cord;
 	t_map			map;
+	t_bresshem		bresshem;
+	t_mapcontrol	m_control;
 	t_point			**points;
+	int				**poin;
 	int				init;
 }				t_data;
-
-/*MAIN*/
-int		event_key(int keycode, t_data *data);
 
 /*UTILS*/
 void	freedom(char **matrix);
@@ -78,24 +97,55 @@ void	ft_putstr(const char *str);
 
 /*ERRMANAG*/
 void	errmanag(int argc);
+void	check_map_width(char *route);
 
 /*--Print_in_window*/
-void	bresen_alg(float x, float y, float x1, float y2, t_data *fdf);
+void	bresen_alg(t_data *fdf);
+int		z_value(t_data *fdf);
+int		z1_value(t_data *fdf);
+void	isometric(t_data *fdf, float *x, float *y, int z);
+void	shift_map(t_data *fdf);
+void	bress_pixel_print(t_data *fdf, float step_x, float step_y);
 void	my_mlx_pixel_put(t_data *data, int x, int y, int color);
 int		line_y(t_data fdf, int width, int color);
 int		line_x(t_data fdf, int width, int color);
-void	print_map(t_data fdf);
+void	print_map(t_data *fdf);
 void	print_values_console(t_data *fdf);
 
-/*Events*/
+/*EVENTS*/
+int		event_key(int keycode, t_data *fdf);
 void	ft_close(t_data *data);
+int		ft_close_wrap(void *data);
 void	clear_window(t_data *data);
 
+/*Shift_event*/
+void	shift_up(t_data *fdf);
+void	shift_down(t_data *fdf);
+void	shift_left(t_data *fdf);
+void	shift_right(t_data *fdf);
+
+/*Zoom_event*/
+void	zoom_up(t_data *fdf);
+void	zoom_down(t_data *fdf);
+
+/*Height_event*/
+void	height_up(t_data *fdf);
+void	height_down(t_data *fdf);
+
+/*Color_event*/
+void	color_event(t_data *fdf);
+
+/*Rotate_event*/
+void	rotate_event_plus(t_data *fdf);
+void	rotate_event_minus(t_data *fdf);
+
 /*Read_map*/
+void	map_size(t_data *fdf);
 int		map_width(t_data *fdf);
 int		map_height(t_data *fdf);
 int		line_width(t_data *fdf);
 void	fill_map_struct(t_data *fdf);
+void	save_map(t_data *fdf);
 void	open_map(char *route, t_data *fdf);
 int		f_extension(char *route, char *ext);
 void	close_map(t_data *fdf);

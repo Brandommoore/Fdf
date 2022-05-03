@@ -6,7 +6,7 @@
 #    By: mcordoba <mcordoba@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/26 20:29:36 by marvin            #+#    #+#              #
-#    Updated: 2022/02/28 16:09:23 by mcordoba         ###   ########.fr        #
+#    Updated: 2022/03/15 14:59:15 by mcordoba         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,12 +14,24 @@ SRC = 	main.c \
 		utils/freedom.c \
 		utils/ft_putstr.c \
 		utils/errmanag/errmanag.c \
+		utils/errmanag/check_map_width.c \
+		utils/events/events.c \
+		utils/events/shift_event.c \
+		utils/events/zoom_event.c \
+		utils/events/height_event.c \
+		utils/events/color_event.c \
+		utils/events/rotate_event.c \
 		utils/events/close_clear.c \
 		utils/print_in_window/bresen_alg.c \
+		utils/print_in_window/z_values.c \
+		utils/print_in_window/isometric.c \
+		utils/print_in_window/shift_map.c \
+		utils/print_in_window/bress_pixel.c \
 		utils/print_in_window/mlx_put_pixel.c \
 		utils/print_in_window/print_lines.c \
 		utils/print_in_window/print_map.c \
 		utils/read_map/open_map.c \
+		utils/read_map/save_map.c \
 		utils/read_map/map_size.c \
 		utils/read_map/fill_map_struct.c \
 		utils/read_map/str_to_color.c
@@ -35,7 +47,7 @@ RM = rm -f
 
 CC = gcc
 
-CFLAGS = -I. -fsanitize=address -g3 -Wall -Werror -Wextra -Imlx
+CFLAGS = -I. -g3 -Wall -Werror -Wextra -Imlx
 
 CFNAME = -o $(NAME)
 
